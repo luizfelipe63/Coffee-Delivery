@@ -62,7 +62,6 @@ export const Infos = styled.div`
   }
 `
 export const Local = styled(Infos)` 
-  
 `
 export const Time = styled(Infos)`
 `
