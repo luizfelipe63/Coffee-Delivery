@@ -2,7 +2,7 @@ import {NavLink} from 'react-router-dom'
 
 import {ShoppingCart, MapPin} from 'phosphor-react'
 import Logo from '../../assets/Logo-coffe.svg'
-import { Actions, Card, NavContainer,Location } from './style'
+import { Actions, Card, NavContainer,Location } from './styles'
 
 
 export function NavBar(){

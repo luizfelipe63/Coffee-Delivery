@@ -6,6 +6,7 @@ export const NavContainer = styled.nav`
  align-items: center;
  margin: 2rem auto;
 
+
  background-color: ${props => props.theme.color.background};
  width: ${({theme}) => theme.layout.width};
  

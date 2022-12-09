@@ -1,5 +1,8 @@
+import { Card } from "../../components/Card"
 import { Header } from "./components/header"
-import { HomeContainer } from "./styles"
+import { HomeContainer, HomeContent } from "./styles"
+
+
 
 
 export function Home(){
@@ -7,7 +10,10 @@ export function Home(){
     <>
     <Header/>
     <HomeContainer>
-      <h1>Home</h1>
+      <h1>Nossos cafés</h1>
+      <HomeContent>
+        <Card/>
+      </HomeContent>
     </HomeContainer>
     </>
   ) 
