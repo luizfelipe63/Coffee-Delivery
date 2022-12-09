@@ -1,4 +1,4 @@
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { 
   CheckoutContainer,
   CoffeInputs, 
@@ -10,12 +10,18 @@ import {
   InfoBase,
   InputBairro,
   InputUF,
-  InputBase} from "./styles";
+  InputBase,
+  SelectButton,
+  ButtonContent,
+  CoffeCard,
+  ButtonCard,
+  InfoItens,
+  InfoTotal} from "./styles";
 
 export function Checkout(){
   return (
     <CheckoutContainer>
-      <div>
+      <section>
         <h1>Complete seu pedido</h1>
         <CoffeInputs>
           <HeaderBase>
@@ -49,14 +55,40 @@ export function Checkout(){
               <span>O pagamento é feito na entrega. Escolha a forma que deseja pagar</span>
             </div>
           </HeaderPayment>
-          <div>
-            <button>CARTÃO DE CRÉDITO</button>
-            <button>CARTÃO DE DÉBITO</button>
-            <button>DINHEIRO</button>
-          </div>
+          <ButtonContent>
+            <SelectButton>
+              <CreditCard size={16}/>
+              CARTÃO DE CRÉDITO
+            </SelectButton>
+            <SelectButton>
+              <Bank size={16}/>
+              CARTÃO DE DÉBITO
+            </SelectButton>
+            <SelectButton>
+              <Money size={16}/>
+              DINHEIRO
+            </SelectButton>
+          </ButtonContent>
         </CoffePayment>
-      </div>
-      <h1>Cafés selecionados</h1>
+      </section>
+      <section>
+        <h1>Cafés selecionados</h1>
+        <CoffeCard>
+          <InfoItens>
+            <p>Total de itens</p>
+            <span>R$ 29,70</span>
+          </InfoItens>
+          <InfoItens>
+            <p>Entrega</p>
+            <span>R$ 3,50</span>
+          </InfoItens>
+          <InfoTotal>
+            <p>Total</p>
+            <span>R$ 33,20</span>
+          </InfoTotal>
+          <ButtonCard>confirmar pedido</ButtonCard>
+        </CoffeCard>
+      </section>
     </CheckoutContainer>
   )
 }
