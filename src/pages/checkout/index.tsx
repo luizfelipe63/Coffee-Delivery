@@ -1,4 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
+import { CoffeSelected } from "../../components/CoffeSelected";
 import { 
   CheckoutContainer,
   CoffeInputs, 
@@ -36,7 +37,7 @@ export function Checkout(){
               <div><InputCep type="text" placeholder="CEP" /></div>
               <div><InputBase type="text" placeholder="Rua" /></div>
               <InfoBase>
-                <InputCep type="text" placeholder="Número" />
+                <InputBase type="text" placeholder="Número" />
                 <InputBase type="text" placeholder="Complemento" />
               </InfoBase>
               <InfoBase>
@@ -74,6 +75,7 @@ export function Checkout(){
       <section>
         <h1>Cafés selecionados</h1>
         <CoffeCard>
+          <CoffeSelected/>
           <InfoItens>
             <p>Total de itens</p>
             <span>R$ 29,70</span>

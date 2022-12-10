@@ -1,6 +1,6 @@
 import { ShoppingCart } from "phosphor-react";
 import Coffe from '../../assets/Coffee.svg'
-import { CardCoffe, Description, Name, Tag } from "./styles";
+import { Buy, CardCoffe, Description, Name, Tag } from "./styles";
 
 
 
@@ -11,11 +11,11 @@ export function Card(){
       <Tag>TRADICIONAL</Tag>
       <Name>Expresso Tradicional</Name>
       <Description>O tradicional café feito com água quente e grãos moídos</Description>
-      <div>
-        <span>R$ 9,90</span>
-        <input type="number" name="" id="" />
-        <ShoppingCart/>
-      </div>
+      <Buy>
+        <span>R$ <strong>9,90</strong></span>
+        <input type="number" name="" id="" min={1} />
+        <button><ShoppingCart weight="fill" size={22}/></button>
+      </Buy>
     </CardCoffe>
   )
 }

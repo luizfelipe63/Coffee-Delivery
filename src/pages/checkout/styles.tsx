@@ -148,4 +148,11 @@ export const ButtonCard = styled.button`
   border: 0;
   border-radius: 6px;
   padding: .75rem;
+  transition: background 0.1s;
+
+  cursor: pointer;
+
+  :hover{
+    background: ${props => props.theme.color["yellow-dark"]};
+  }
 `
