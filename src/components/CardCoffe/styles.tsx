@@ -9,6 +9,12 @@ export const CardCoffe = styled.div`
   flex-direction: column;
   align-items: center;
 
+  div{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
   img{
     margin-top: -1.25rem;
   }
