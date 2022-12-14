@@ -1,22 +1,43 @@
 import styled from "styled-components";
 
-export const CheckoutContainer = styled.main`
-  width: ${props => props.theme.layout.width};
-  margin: 2.5rem auto;
-  display: flex;
-  gap: 2rem;
+export const CheckoutContainer = styled.div`
+  padding: 2.5rem 0;
 
   h1{
     font-size: 1.125rem;
     font-family: 'Baloo 2', cursive;
-    margin-bottom: .1rem;
+    margin-bottom: 1rem;
   }
 `
 
-export const CoffeInputs = styled.div`
+export const ContentForm = styled.form`
+  width: ${props => props.theme.layout.width};
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+`
+
+export const CardCoffeInputs = styled.div`
   border-radius: 8px;
   padding: 2.5rem;
   background: ${props => props.theme.color["base-card"]};
+`
+
+export const ContainerInputs = styled.div`
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 12.5rem 1fr 3.75rem;
+
+  div{
+    :nth-child(2){
+      grid-column: 1 / 4;
+    }
+
+    :nth-child(4){
+      grid-column: 2 / 4;
+    }
+  }
+
 `
 
 export const HeaderBase = styled.div`
@@ -47,39 +68,7 @@ export const HeaderPayment = styled(HeaderBase)`
   }
 `
 
-export const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`
-
-export const InputBase = styled.input`
-  border: 1px solid ${props => props.theme.color["base-button"]};
-  border-radius: 4px;
-  padding: .75rem;
-  font-size: 0.875rem;
-  background: ${props => props.theme.color["base-input"]};
-  color: ${props => props.theme.color["base-text"]};
-  width: 100%;
-
-`
-export const InfoBase = styled.div`
-  display: flex;
-  gap: .75rem;
-
-`
-
-export const InputCep = styled(InputBase)`
-  width: 12.5rem;
-`
-export const InputBairro = styled(InputBase)`
-  width: 12.5rem;
-`
-export const InputUF = styled(InputBase)`
-  width: 3.75rem;
-`
-
-export const CoffePayment = styled.div`
+export const CardCoffePayment = styled.div`
   border-radius: 8px;
   margin-top: .75rem;
   padding: 2.5rem;
@@ -123,6 +112,11 @@ export const CoffeCard = styled.div`
   gap: .75rem;
 
 `
+export const InfoBase = styled.div`
+  display: flex;
+  gap: .75rem;
+
+`
 
 export const InfoItens = styled.div`
   display: flex;
@@ -136,6 +130,7 @@ export const InfoItens = styled.div`
 export const InfoTotal = styled(InfoItens)`
   font-size: 1.25rem;
   font-weight: bold;
+  margin-bottom: .75rem;
 
   span{
     font-size: 1.25rem;
@@ -145,6 +140,8 @@ export const InfoTotal = styled(InfoItens)`
 export const ButtonCard = styled.button`
   background: ${props => props.theme.color.yellow};
   color: ${props => props.theme.color.White};
+  font-weight: bold;
+  font-size: .875rem;
   border: 0;
   border-radius: 6px;
   padding: .75rem;
