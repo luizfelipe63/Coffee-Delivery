@@ -19,6 +19,7 @@ export function NavBar(){
       <NavLink to={'/checkout'} title='carrinho'>
         <Card>
           <ShoppingCart weight='fill' size={22}/>
+          <span>3</span>
         </Card>
       </NavLink>
       </Actions>

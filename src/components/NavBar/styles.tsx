@@ -34,11 +34,25 @@ export const Card = styled.div`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  position: relative;
 
   background: ${props => props.theme.color["yellow-ligth"]};
   color: ${props => props.theme.color["yellow-dark"]};
 
   span{
+    position: absolute;
+    top: -.5625rem;
+    right: -.5625rem;
+
+    font-size: .875rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
     background: ${props => props.theme.color["yellow-dark"]};
     color: ${props => props.theme.color.White};
   }
