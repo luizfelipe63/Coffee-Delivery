@@ -2,20 +2,33 @@ import styled from "styled-components";
 
 export const InfoCoffe = styled.div`
   background: ${props => props.theme.color["base-card"]};
+  padding: .5rem 0.25rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid ${props => props.theme.color["base-button"]};
 
-
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   gap: 1.25rem;
 ` 
 
 export const Details = styled.div`
-  
-  div{
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: ${props => props.theme.color["base-subtitle"]};
 
-    input{
+  img{
+    width: 4rem;
+    height: 4rem;
+  }
+`
+
+export const ActionsCar = styled.div`
+    display: flex;
+    margin-top: .5rem;
+
+   input{
       background: ${props => props.theme.color["base-button"]};
       padding: .5rem;
       margin-right: .5rem;
@@ -31,13 +44,16 @@ export const Details = styled.div`
       border: 0;
       color: ${props => props.theme.color["base-text"]};
 
+      cursor: pointer;
+
       display: flex;
       align-items: center;
       gap: .25rem;
+
+    
 
       svg{
         color: ${props => props.theme.color.purple};
       }
     }
-  }
 `
