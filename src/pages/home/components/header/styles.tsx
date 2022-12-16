@@ -11,6 +11,10 @@ export const HeaderContainer = styled.div`
   background: url(${background}) no-repeat center;
   background-size: 100% ;
 
+  @media(max-width: 768px){
+    padding: 2rem 1.5rem;
+  }
+
 `
 
 export const Content = styled.div`
@@ -18,6 +22,12 @@ export const Content = styled.div`
   margin: 0 auto;
   display: flex;
   gap: 3.5rem;
+
+  @media (max-width: 768px){
+    img{
+      display: none;
+    }
+  }
 `
 
 export const Title = styled.div`
@@ -48,6 +58,11 @@ export const Items = styled.div`
 
   &.Shopping{
     background: ${props => props.theme.color["yellow-dark"]};
+  }
+
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
   }
 `
 export const Item = styled.div`

@@ -9,6 +9,14 @@ export const HomeContainer = styled.main`
     font-family: 'Baloo 2', cursive;
     font-size: 2rem;
   }
+
+  @media (max-width: 768px){
+    padding: 2rem 1.5rem;
+
+    h1{
+      text-align: center;
+    }
+  }
 `
 
 export const HomeContent = styled.section`
@@ -17,4 +25,9 @@ export const HomeContent = styled.section`
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 2rem;
+
+  @media (max-width: 768px){
+    grid-template-columns: 1fr;
+  }
+
 `

@@ -24,7 +24,9 @@ export function Card({image, name, description, tag, preço}:CardProps){
       <Name>{name}</Name>
       <Description>{description}</Description>
       <Buy>
-        <span>R$<strong>{preço}</strong></span>
+        <div>
+          <span>R$<strong>{preço}</strong></span>
+        </div>
         <input type="number" name="" id="" min={1} />
         <button><ShoppingCart weight="fill" size={22}/></button>
       </Buy>

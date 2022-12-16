@@ -21,9 +21,15 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 
-
   body{
     background-color: ${props => props.theme.color.background};
     color: ${props => props.theme.color['base-text']};
+  }
+
+  
+  @media (max-width: 768px){
+    html{
+      font-size: 87.5%;
+    }
   }
 `

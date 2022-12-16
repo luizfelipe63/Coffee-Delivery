@@ -5,7 +5,6 @@ import { LayoutContainer } from './style';
 export function DefaultLayuot(){
   return (
     <LayoutContainer>
-      <NavBar/>
       <Outlet/>
     </LayoutContainer>
   )

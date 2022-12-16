@@ -4,8 +4,12 @@ export const NavContainer = styled.nav`
  display: flex;
  justify-content: space-between;
  align-items: center;
- margin: 2rem auto;
+ margin: 0 auto;
+ padding: 2rem 0;
 
+ @media (max-width: 768px){
+  padding: 2rem 1.5rem;
+}
 
  background-color: ${props => props.theme.color.background};
  width: ${({theme}) => theme.layout.width};
@@ -17,6 +21,7 @@ export const Actions = styled.div`
   align-items: center;
   gap: 1.25rem;
 `
+
 export const Location = styled.div`
   padding: .5rem;
   border-radius: 6px;

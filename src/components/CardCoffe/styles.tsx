@@ -57,6 +57,9 @@ export const Buy = styled.div`
     }
   }
 
+
+  
+
   input{
     background: ${props => props.theme.color["base-button"]};
     padding: .5rem;
@@ -85,5 +88,4 @@ export const Buy = styled.div`
     }
   }
 
-  
 `

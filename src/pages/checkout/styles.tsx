@@ -8,6 +8,10 @@ export const CheckoutContainer = styled.div`
     font-family: 'Baloo 2', cursive;
     margin-bottom: 1rem;
   }
+
+  @media (max-width: 768px){
+    padding: 2rem 1.5rem;
+  }
 `
 
 export const ContentForm = styled.form`
@@ -15,6 +19,11 @@ export const ContentForm = styled.form`
   margin: 0 auto;
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const CardCoffeInputs = styled.div`
@@ -36,6 +45,12 @@ export const ContainerInputs = styled.div`
     :nth-child(4){
       grid-column: 2 / 4;
     }
+  }
+
+  @media (max-width: 768px){
+    display: grid;
+    grid-template-columns: 1fr 3.25rem;
+
   }
 
 `
@@ -76,11 +91,18 @@ export const CardCoffePayment = styled.div`
 
   display: flex;
   flex-direction: column;
+
 `
 
 export const ButtonContent = styled.div`
   display: flex;
   gap: .75rem;
+
+  
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const SelectButton = styled.button`
@@ -99,6 +121,11 @@ export const SelectButton = styled.button`
   svg{
     color: ${props => props.theme.color.purple};
   }
+
+  
+  @media (max-width: 768px){
+    width: 100%;
+  }
 `
 
 export const CoffeCard = styled.div`
@@ -110,6 +137,11 @@ export const CoffeCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: .75rem;
+
+  
+  @media (max-width: 768px){
+    width: 100%;
+  }
 
 `
 export const InfoBase = styled.div`
