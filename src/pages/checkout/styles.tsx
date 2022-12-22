@@ -49,7 +49,16 @@ export const ContainerInputs = styled.div`
 
   @media (max-width: 768px){
     display: grid;
-    grid-template-columns: 1fr 3.25rem;
+    grid-template-columns: 1fr 3rem;
+
+    div{
+      :nth-child(2),
+      :nth-child(3),
+      :nth-child(4),
+      :nth-child(5){
+        grid-column: 1 / 3;
+      }
+    }
 
   }
 
