@@ -13,6 +13,7 @@ export const HeaderContainer = styled.div`
 
   @media(max-width: 768px){
     padding: 2rem 1.5rem;
+    background: url(${background}) repeat-y top;
   }
 
 `
