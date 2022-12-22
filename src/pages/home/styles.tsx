@@ -23,7 +23,7 @@ export const HomeContent = styled.section`
   margin-top: 3.375rem;
   margin-bottom: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 16rem);
   gap: 2rem;
 
   @media (max-width: 768px){
