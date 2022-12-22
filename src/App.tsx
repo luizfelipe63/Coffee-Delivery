@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components";
 import { NavBar } from './components/NavBar';
 import { Router } from './Router';
 import { GlobalStyle } from "./styles/global";
-import { DarkTheme } from './styles/themes/dark';
 import {defaultTheme } from "./styles/themes/default";
 
 export function App() {
@@ -12,7 +11,7 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <NavBar/>
-       <Router/>
+        <Router/>
       </BrowserRouter>
       <GlobalStyle/>
     </ThemeProvider>
