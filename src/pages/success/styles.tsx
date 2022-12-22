@@ -4,12 +4,22 @@ import { IconBase } from "../home/components/header/styles";
 export const SuccessContainer = styled.main`
   width: ${({theme}) => theme.layout.width};
   margin: 5rem auto;
+
+  @media (max-width: 768px){
+    padding: 2rem 1.5rem;
+  }
+
 `
 
 export const ContentSuccess = styled.div`
   display: flex;
   gap: 6.25rem;
   margin-top: 2.5rem;
+
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+  }
 `
 export const Title = styled.div`
  
@@ -32,13 +42,17 @@ export const OrderInfo = styled.div`
   flex-direction: column;
   gap: 2rem;
   width: 32.875rem;
-  border: 1px solid transparent;
   border-radius: 6px 36px;
-  border-image: linear-gradient(to right, #DBAC2C, #8047F8);
+  border: solid 2px transparent;
+  background-image: linear-gradient(${({ theme }) => theme.color.background}, ${({ theme }) => theme.color.background}), linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%);
   border-image-slice: 1;
   background-origin: border-box;
-  background-clip: content-box, border-box;
+  background-clip: padding-box, border-box;
   padding: 2.5rem;
+
+  @media (max-width: 768px){
+    width: 100%;
+  }
 `
 export const IconPayment = styled(IconBase)`
   background: ${props => props.theme.color["yellow-dark"]};

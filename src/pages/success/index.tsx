@@ -1,6 +1,15 @@
 import illustration from '../../assets/Illustration.svg'
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
-import { ContentSuccess, IconLocal, IconPayment, Local, OrderInfo, Payment, SuccessContainer, Time, Title } from './styles'
+import { 
+  ContentSuccess,
+  IconLocal, 
+  IconPayment, 
+  Local, 
+  OrderInfo, 
+  Payment, 
+  SuccessContainer, 
+  Time, 
+  Title } from './styles'
 import { IconClock } from '../home/components/header/styles'
 
 export function Success(){
@@ -16,7 +25,7 @@ export function Success(){
            <IconLocal><MapPin weight='fill' size={16} /></IconLocal>  
             <div>
               <p>
-                Entrega em Rua João Daniel Martinelli, <strong>102</strong>
+                Entrega em <strong>Rua João Daniel Martinelli</strong>, <strong>102</strong>
               </p>
               <strong>Farrapos - Porto Alegre, RS</strong>
             </div>
