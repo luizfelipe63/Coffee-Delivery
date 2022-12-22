@@ -2,22 +2,23 @@ import styled from "styled-components";
 
 export const CardCoffe = styled.div`
   background: ${props => props.theme.color["base-card"]};
-  padding: 0 1.25rem 1.25rem 1.25rem;
+  padding: 0 1.5rem 1.25rem 1.5rem;
   border-radius: 6px 36px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  div{
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-  }
 
   img{
     margin-top: -1.25rem;
   }
+`
+
+export const TagContainer = styled.div`
+   display: flex;
+    align-items: center;
+    gap: .5rem;
 `
 
 export const Tag = styled.span`
@@ -43,22 +44,25 @@ export const Description = styled.span`
   color: ${props => props.theme.color["base-labal"]};
 `
 
-export const Buy = styled.div`
+export const FooterBuy = styled.footer`
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   span{
-    margin-right: 2rem;
     font-size: 0.875rem;
+    color: ${props =>  props.theme.color["base-text"]};
+  } 
 
-    strong{
-      font-size: 1.5rem;
-      font-family: 'baloo 2', monospace;
-    }
-  }
+  strong{
+    font-size: 1.5rem;
+    font-family: 'baloo 2', monospace;
+  } 
+`
 
-
-  
+export const Actions = styled.div`
+  display: flex;
 
   input{
     background: ${props => props.theme.color["base-button"]};
@@ -87,5 +91,4 @@ export const Buy = styled.div`
       background: ${props => props.theme.color.purple};
     }
   }
-
 `

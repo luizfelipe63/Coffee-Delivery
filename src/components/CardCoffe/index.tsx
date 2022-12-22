@@ -1,5 +1,12 @@
 import { ShoppingCart } from "phosphor-react";
-import { Buy, CardCoffe, Description, Name, Tag } from "./styles";
+import {
+  Actions, 
+  CardCoffe, 
+  Description, 
+  FooterBuy, 
+  Name, 
+  Tag, 
+  TagContainer } from "./styles";
 
 interface CardProps {
   image:string
@@ -14,22 +21,22 @@ export function Card({image, name, description, tag, preço}:CardProps){
   return(
     <CardCoffe>
       <img src={image} alt="" />
-      <div>
+      <TagContainer>
         {tag.map(tag => {
           return (
             <Tag>{tag}</Tag>
           )
         })}
-      </div>
+      </TagContainer>
       <Name>{name}</Name>
       <Description>{description}</Description>
-      <Buy>
-        <div>
-          <span>R$<strong>{preço}</strong></span>
-        </div>
-        <input type="number" name="" id="" min={1} />
-        <button><ShoppingCart weight="fill" size={22}/></button>
-      </Buy>
+      <FooterBuy>
+        <div><span>R$ <strong>{preço}</strong></span></div>
+        <Actions>
+          <input min={1} type="number"/>
+          <button type="button"><ShoppingCart weight="fill" size={22}/></button>
+        </Actions>
+      </FooterBuy>
     </CardCoffe>
   )
 }
