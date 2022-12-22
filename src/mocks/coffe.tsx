@@ -45,7 +45,7 @@ export const CoffeCard = [
     image:Gelado,
     name: 'Expresso Gelado',
     description: 'Bebida preparada com café expresso e cubos de gelo',
-    preço:'9,90',
+    preço:'8,90',
     tag:['TRADICIONAL', 'GELADO']
   },
   {
@@ -53,7 +53,7 @@ export const CoffeCard = [
     image:Pingado,
     name: 'Café com Leite',
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
-    preço:'9,90',
+    preço:'10,90',
     tag:['TRADICIONAL','COM LEITE']
   },
   {
@@ -61,7 +61,7 @@ export const CoffeCard = [
     image:Latte,
     name: 'Latte',
     description: 'Uma dose de café expresso com o dobro de leite e espuma cremosa',
-    preço:'9,90',
+    preço:'10,90',
     tag:['TRADICIONAL','COM LEITE']
   },
   {
@@ -69,7 +69,7 @@ export const CoffeCard = [
     image:Capuccino,
     name: 'Capuccino',
     description: 'Bebida com canela feita de doses iguais de café, leite e espuma',
-    preço:'9,90',
+    preço:'10,90',
     tag:['TRADICIONAL','COM LEITE']
   },
   {
@@ -77,7 +77,7 @@ export const CoffeCard = [
     image:Macchiato,
     name: 'Macchiato',
     description: 'Café expresso misturado com um pouco de leite quente e espuma',
-    preço:'9,90',
+    preço:'10,90',
     tag:['TRADICIONAL','COM LEITE']
   },
   {
@@ -85,7 +85,7 @@ export const CoffeCard = [
     image:Mocaccino,
     name: 'Mocaccino',
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
-    preço:'9,90',
+    preço:'10,90',
     tag:['TRADICIONAL','COM LEITE']
   },
   {
@@ -93,7 +93,7 @@ export const CoffeCard = [
     image:ChocoQunte,
     name: 'Chocolate Quente',
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
-    preço:'9,90',
+    preço:'10,90',
     tag:['ESPECIAL','COM LEITE']
   },
   {
@@ -101,7 +101,7 @@ export const CoffeCard = [
     image:Cubano,
     name: 'Cubano',
     description: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
-    preço:'9,90',
+    preço:'12,90',
     tag:['ESPECIAL','ALCOÓLICO','GELADO']
   },
   {
@@ -109,7 +109,7 @@ export const CoffeCard = [
     image:Havaiano,
     name: 'Havaiano',
     description: 'Bebida adocicada preparada com café e leite de coco',
-    preço:'9,90',
+    preço:'13,90',
     tag:['ESPECIAL']
   },
   {
@@ -117,7 +117,7 @@ export const CoffeCard = [
     image:Arabe,
     name: 'Árabe',
     description: 'Bebida preparada com grãos de café árabe e especiarias',
-    preço:'9,90',
+    preço:'24,90',
     tag:['ESPECIAL']
   },
   {
@@ -125,7 +125,7 @@ export const CoffeCard = [
     image:Irlandes,
     name: 'Irlandês',
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-    preço:'9,90',
+    preço:'14,90',
     tag:['ESPECIAL', 'ALCOÓLICO']
   },
 ]
