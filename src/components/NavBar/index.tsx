@@ -4,7 +4,13 @@ import {ShoppingCart, MapPin,MoonStars} from 'phosphor-react'
 import Logo from '../../assets/Logo-coffe.svg'
 import { Actions, Card, NavContainer,Location} from './styles'
 
-export function NavBar(){
+
+interface Props{
+  toggleTheme: () => void
+}
+
+
+export function NavBar({toggleTheme} : Props){
 
   return (
     <NavContainer>
@@ -12,6 +18,7 @@ export function NavBar(){
         <img src={Logo} alt="" />
       </NavLink>
       <Actions>
+      <MoonStars onClick={toggleTheme}/>
       <Location>
         <MapPin weight='fill' size={22}/>
         Luziânia, GO
