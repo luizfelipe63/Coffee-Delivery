@@ -22,8 +22,8 @@ export const TagContainer = styled.div`
 `
 
 export const Tag = styled.span`
-  background: ${props => props.theme.color["yellow-ligth"]};
-  color: ${props => props.theme.color["yellow-dark"]};
+  background: ${props => props.theme.color["base-tag"]};
+  color: ${props => props.theme.color["color-tag"]};
   margin-top: .75rem;
   font-size: 0.625rem;
   font-weight: bold;
@@ -65,7 +65,7 @@ export const Actions = styled.div`
   display: flex;
 
   input{
-    background: ${props => props.theme.color["base-button"]};
+    background: ${props => props.theme.color["card-input"]};
     padding: .5rem;
     margin-right: .5rem;
     border-radius: 6px;
@@ -74,7 +74,7 @@ export const Actions = styled.div`
   }
 
   button{
-    background: ${props => props.theme.color["purple-dark"]};
+    background: ${props => props.theme.color["card-button"]};
     color: ${props => props.theme.color.White};
     border-radius: 6px;
     border: 0;
@@ -88,7 +88,7 @@ export const Actions = styled.div`
     transition: background 0.1s;
 
     :hover{
-      background: ${props => props.theme.color.purple};
+      background: ${props => props.theme.color["card-hover"]};
     }
   }
 `

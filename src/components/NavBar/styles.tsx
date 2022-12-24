@@ -7,6 +7,8 @@ export const NavContainer = styled.nav`
  margin: 0 auto;
  padding: 2rem 0;
 
+
+
  @media (max-width: 768px){
   padding: 2rem 1.5rem;
 }
@@ -61,4 +63,14 @@ export const Card = styled.div`
     background: ${props => props.theme.color["yellow-dark"]};
     color: ${props => props.theme.color.White};
   }
+`
+export const CardToggle = styled.div`
+  cursor: pointer;
+
+  padding: .5rem;
+  border-radius: 6px;
+  display: flex;
+
+  background: ${props => props.theme.color["yellow-ligth"]};
+  color: ${props => props.theme.color["yellow-dark"]};
 `

@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   padding: 5.625rem 0;
   gap: 3.5rem;
   
-  background: url(${background}) no-repeat center;
+  //background: url(${background}) no-repeat center;
   background-size: 100% ;
 
   @media(max-width: 768px){
@@ -92,7 +92,7 @@ export const IconClock = styled(IconBase)`
   background: ${props => props.theme.color.yellow}
 `
 export const IconBox = styled(IconBase)`
-  background: ${props => props.theme.color["base-text"]}
+  background: ${props => props.theme.color["box-icon"]}
 `
 export const IconCoffe = styled(IconBase)`
   background: ${props => props.theme.color.purple}

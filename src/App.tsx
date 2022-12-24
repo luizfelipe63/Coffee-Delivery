@@ -18,7 +18,7 @@ export function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : defaultTheme}>
       <BrowserRouter>
-        <NavBar toggleTheme={toggleTheme}/>
+        <NavBar toggleTheme={toggleTheme} stateDark={isDarkTheme}/>
         <Router/>
       </BrowserRouter>
       <GlobalStyle/>

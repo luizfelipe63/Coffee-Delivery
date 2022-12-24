@@ -8,10 +8,19 @@ export const defaultTheme = {
     purple: '#8047F8',
     'purple-ligth': '#EBE5F9',
 
+    'box-icon': '#574F4D',
+
     'base-title': '#272221',
     'base-subtitle': '#403937',
     'base-text': '#574F4D',
     'base-labal': '#8D8686',
+
+    'base-tag': '#F1E9C9',
+    'color-tag': '#C47F17',
+
+    'card-input': '#EDEDED',
+    'card-button': '#4B2995',
+    'card-hover': '#8047F8',
 
     'base-hover': '#D7D5D5',
     'base-button': '#E6E5E5',
@@ -36,14 +45,23 @@ export const darkTheme = {
     purple: '#8047F8',
     'purple-ligth': '#EBE5F9',
 
+    'box-icon': '#574F4D',
+
     'base-title': '#FFF',
     'base-subtitle': '#FAFAFA',
     'base-text': '#FFF',
-    'base-labal': '#8D8686',
+    'base-labal': '#EDEDED',
+
+    'base-tag': '#291C18',
+    'color-tag': '#FFF',
+
+    'card-input': '#FFF',
+    'card-button': '#291C18',
+    'card-hover': '#402C26',
 
     'base-hover': '#291C18',
     'base-button': '#291C18',
-    'base-input': '#EDEDED',
+    'base-input': '#8C7561',
     'base-card': '#8C7561',
 
     background: '#3B2C22',
