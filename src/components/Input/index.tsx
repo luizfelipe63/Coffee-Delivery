@@ -1,17 +1,15 @@
-import { InputHTMLAttributes } from "react";
-import { InputContent } from "./styles";
+import { InputHTMLAttributes } from 'react'
+import { InputContent } from './styles'
 
-
-export interface textInputProps extends InputHTMLAttributes<HTMLInputElement> { 
+export interface textInputProps extends InputHTMLAttributes<HTMLInputElement> {
   isOptional?: boolean
 }
 
-
-export function Input({isOptional,...props}:textInputProps){
-  return(
+export function Input({ isOptional, ...props }: textInputProps) {
+  return (
     <InputContent>
       <input {...props} />
-      { isOptional && <span>Opcional</span>}
+      {isOptional && <span>Opcional</span>}
     </InputContent>
   )
 }

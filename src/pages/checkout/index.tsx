@@ -1,13 +1,19 @@
-import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
-import { CoffeSelected } from "../../components/CartCard";
-import { Input } from "../../components/Input";
-import { 
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from 'phosphor-react'
+import { CoffeSelected } from '../../components/CartCard'
+import { Input } from '../../components/Input'
+import {
   CheckoutContainer,
   CardCoffeInputs,
   CardCoffePayment,
-  HeaderPayment, 
+  HeaderPayment,
   HeaderBase,
-  ContainerInputs, 
+  ContainerInputs,
   SelectButton,
   ButtonContent,
   CoffeCard,
@@ -15,9 +21,9 @@ import {
   InfoItens,
   InfoTotal,
   ContentForm,
-  } from "./styles";
+} from './styles'
 
-export function Checkout(){
+export function Checkout() {
   return (
     <CheckoutContainer>
       <ContentForm>
@@ -25,41 +31,44 @@ export function Checkout(){
           <h1>Complete seu pedido</h1>
           <CardCoffeInputs>
             <HeaderBase>
-              <MapPinLine size={22}/>
+              <MapPinLine size={22} />
               <div>
                 <p>Endereço de Entrega</p>
                 <span>Informe o endereço onde deseja receber seu pedido</span>
               </div>
             </HeaderBase>
-              <ContainerInputs>
-                <Input type={'text'} placeholder='CEP'/>
-                <Input type={'text'} placeholder='Rua'/>
-                <Input type={'text'} placeholder='Número'/>
-                <Input type={'text'} placeholder='Complemento' isOptional/>
-                <Input type={'text'} placeholder='Bairro'/>
-                <Input type={'text'} placeholder='Cidade'/>
-                <Input type={'text'} placeholder='UF'/>
-              </ContainerInputs>
+            <ContainerInputs>
+              <Input type={'text'} placeholder="CEP" />
+              <Input type={'text'} placeholder="Rua" />
+              <Input type={'text'} placeholder="Número" />
+              <Input type={'text'} placeholder="Complemento" isOptional />
+              <Input type={'text'} placeholder="Bairro" />
+              <Input type={'text'} placeholder="Cidade" />
+              <Input type={'text'} placeholder="UF" />
+            </ContainerInputs>
           </CardCoffeInputs>
           <CardCoffePayment>
             <HeaderPayment>
-              <CurrencyDollar size={22}/>
+              <CurrencyDollar size={22} />
               <div>
                 <p>Pagamento</p>
-                <span>O pagamento é feito na entrega. Escolha a forma que deseja pagar</span>
+                <span>
+                  O pagamento é feito na entrega. Escolha a forma que deseja
+                  pagar
+                </span>
               </div>
             </HeaderPayment>
             <ButtonContent>
               <SelectButton type="button">
-                <CreditCard size={16}/>
+                <CreditCard size={16} />
                 CARTÃO DE CRÉDITO
               </SelectButton>
               <SelectButton type="button">
-                <Bank size={16}/>
+                <Bank size={16} />
                 CARTÃO DE DÉBITO
               </SelectButton>
               <SelectButton type="button">
-                <Money size={16}/>
+                <Money size={16} />
                 DINHEIRO
               </SelectButton>
             </ButtonContent>
@@ -68,8 +77,8 @@ export function Checkout(){
         <section>
           <h1>Cafés selecionados</h1>
           <CoffeCard>
-            <CoffeSelected/>
-            <CoffeSelected/>
+            <CoffeSelected />
+            <CoffeSelected />
             <InfoItens>
               <p>Total de itens</p>
               <span>R$ 29,70</span>
