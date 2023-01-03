@@ -60,34 +60,29 @@ export const FooterBuy = styled.footer`
   }
 `
 
-export const Actions = styled.div`
+export const Actions = styled.form`
   display: flex;
 
-  input {
-    background: ${(props) => props.theme.color['card-input']};
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    border-radius: 6px;
-    width: 4.5rem;
-    border: 0;
-  }
+`
 
-  button {
-    background: ${(props) => props.theme.color['card-button']};
-    color: ${(props) => props.theme.color.White};
-    border-radius: 6px;
-    border: 0;
-    padding: 0.5rem;
+export const ButtonCart = styled.button`
+  background: ${(props) => props.theme.color['card-button']};
+  color: ${(props) => props.theme.color.White};
+  border-radius: 6px;
+  border: 0;
+  padding: 0.5rem;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    transition: background 0.1s;
+  transition: background 0.1s;
 
-    :hover {
-      background: ${(props) => props.theme.color['card-hover']};
-    }
+  :hover {
+    background: ${(props) => props.theme.color['card-hover']};
   }
 `
+
+
+

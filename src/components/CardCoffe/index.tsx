@@ -1,6 +1,9 @@
-import { ShoppingCart } from 'phosphor-react'
+import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { FormEvent, useState } from 'react'
+import {CountDownCoffe } from '../CountDown'
 import {
   Actions,
+  ButtonCart,
   CardCoffe,
   Description,
   FooterBuy,
@@ -9,7 +12,8 @@ import {
   TagContainer,
 } from './styles'
 
-interface CardProps {
+
+interface card {
   image: string
   name: string
   description: string
@@ -17,7 +21,30 @@ interface CardProps {
   preço: string
 }
 
-export function Card({ image, name, description, tag, preço }: CardProps) {
+export function Card({image, name, description, tag, preço}: card) {
+
+// const [creatNewCartCard, setCreatNewCartCard] = useState<card[]>([])
+// console.log(creatNewCartCard)
+
+// function handleCreatCartCard(event: FormEvent){
+//   event.preventDefault()
+
+//   const newCart: card = {
+//     description: '',
+//     image: '',
+//     name: '',
+//     tag:[],
+//     preço: ''
+//   }
+
+//   setCreatNewCartCard(state => [...state, newCart] )
+
+
+// }
+
+
+
+ 
   return (
     <CardCoffe>
       <img src={image} alt="" />
@@ -34,11 +61,11 @@ export function Card({ image, name, description, tag, preço }: CardProps) {
             R$ <strong>{preço}</strong>
           </span>
         </div>
-        <Actions>
-          <input min={1} type="number" />
-          <button type="button">
+        <Actions >
+          <CountDownCoffe/>
+          <ButtonCart type="submit">
             <ShoppingCart weight="fill" size={22} />
-          </button>
+          </ButtonCart>
         </Actions>
       </FooterBuy>
     </CardCoffe>
