@@ -27,31 +27,23 @@ export const Details = styled.div`
 export const ActionsCar = styled.div`
   display: flex;
   margin-top: 0.5rem;
+`
 
-  input {
-    background: ${(props) => props.theme.color['card-input']};
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    border-radius: 6px;
-    width: 4.5rem;
-    border: 0;
+export const ButtonCartCard = styled.button `
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
+  border-radius: 6px;
+  border: 0;
+  color: ${(props) => props.theme.color.text};
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  svg {
+    color: ${(props) => props.theme.color['icon-remove']};
   }
 
-  button {
-    font-size: 0.75rem;
-    padding: 0 0.5rem;
-    border-radius: 6px;
-    border: 0;
-    color: ${(props) => props.theme.color.text};
-
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-
-    svg {
-      color: ${(props) => props.theme.color['icon-remove']};
-    }
-  }
 `

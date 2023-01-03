@@ -1,6 +1,7 @@
 import { Trash } from 'phosphor-react'
 import Coffe from '../../assets/images/Coffee.svg'
-import { ActionsCar, Details, InfoCoffe } from './styles'
+import { CountDownCoffe } from '../CountDown'
+import { ActionsCar, ButtonCartCard, Details, InfoCoffe } from './styles'
 
 export function CoffeSelected() {
   return (
@@ -10,11 +11,11 @@ export function CoffeSelected() {
         <div>
           <span>Expresso Tradicional</span>
           <ActionsCar>
-            <input type="number" min={1} />
-            <button>
+            <CountDownCoffe/>
+            <ButtonCartCard type='button'>
               <Trash size={16} />
               REMOVER
-            </button>
+            </ButtonCartCard>
           </ActionsCar>
         </div>
       </Details>
