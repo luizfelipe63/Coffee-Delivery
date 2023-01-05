@@ -1,78 +1,53 @@
-import {
-  Bank,
-  CreditCard,
-  CurrencyDollar,
-  MapPinLine,
-  Money,
-} from 'phosphor-react'
+import { FormProvider, useForm } from 'react-hook-form'
 import { CoffeSelected } from '../../components/CartCard'
-import { Input } from '../../components/Input'
+import { FormDelivery } from './components/FormDelivery'
 import {
   CheckoutContainer,
-  CardCoffeInputs,
-  CardCoffePayment,
-  HeaderPayment,
-  HeaderBase,
-  ContainerInputs,
-  SelectButton,
-  ButtonContent,
   CoffeCard,
   ButtonCard,
   InfoItens,
   InfoTotal,
   ContentForm,
 } from './styles'
+import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { SelectPayment } from './components/SelectPayment'
+
+
+const newDeliveryFormValidationSchema =  zod.object({
+  cep: zod.string().min(8,'Informe seu CEP'),
+  street: zod.string().min(1, 'Informe a sua rua'),
+  number: zod.string().min(1, 'Informe o número'),
+  complement:zod.string(),
+  district: zod.string().min(1,'Informe o bairro'),
+  city: zod.string().min(1,'Informe a cidade'),
+  uf:zod.string().min(1,'informe o UF').max(2, 'Informe o UF')
+})
+
+type NewDeliveryFormData = zod.infer<typeof newDeliveryFormValidationSchema>
 
 export function Checkout() {
+  const createNewDelivery = useForm<NewDeliveryFormData>({
+    resolver: zodResolver(newDeliveryFormValidationSchema),
+  })
+
+  function handleSubmitPageSuccess(data: NewDeliveryFormData) {
+    console.log(data)
+  }
+
+  const { handleSubmit } = createNewDelivery
+
+
+
   return (
     <CheckoutContainer>
-      <ContentForm>
+      <ContentForm onSubmit={handleSubmit(handleSubmitPageSuccess)}>
         <section>
           <h1>Complete seu pedido</h1>
-          <CardCoffeInputs>
-            <HeaderBase>
-              <MapPinLine size={22} />
-              <div>
-                <p>Endereço de Entrega</p>
-                <span>Informe o endereço onde deseja receber seu pedido</span>
-              </div>
-            </HeaderBase>
-            <ContainerInputs>
-              <Input type={'text'} placeholder="CEP" />
-              <Input type={'text'} placeholder="Rua" />
-              <Input type={'text'} placeholder="Número" />
-              <Input type={'text'} placeholder="Complemento" isOptional />
-              <Input type={'text'} placeholder="Bairro" />
-              <Input type={'text'} placeholder="Cidade" />
-              <Input type={'text'} placeholder="UF" />
-            </ContainerInputs>
-          </CardCoffeInputs>
-          <CardCoffePayment>
-            <HeaderPayment>
-              <CurrencyDollar size={22} />
-              <div>
-                <p>Pagamento</p>
-                <span>
-                  O pagamento é feito na entrega. Escolha a forma que deseja
-                  pagar
-                </span>
-              </div>
-            </HeaderPayment>
-            <ButtonContent>
-              <SelectButton type="button">
-                <CreditCard size={16} />
-                CARTÃO DE CRÉDITO
-              </SelectButton>
-              <SelectButton type="button">
-                <Bank size={16} />
-                CARTÃO DE DÉBITO
-              </SelectButton>
-              <SelectButton type="button">
-                <Money size={16} />
-                DINHEIRO
-              </SelectButton>
-            </ButtonContent>
-          </CardCoffePayment>
+          <FormProvider {...createNewDelivery}>
+            <FormDelivery />
+            <SelectPayment/>
+          </FormProvider>
         </section>
         <section>
           <h1>Cafés selecionados</h1>
