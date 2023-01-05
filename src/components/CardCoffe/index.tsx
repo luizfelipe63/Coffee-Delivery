@@ -63,7 +63,7 @@ export function Card({image, name, description, tag, preço}: card) {
         </div>
         <Actions >
           <CountDownCoffe/>
-          <ButtonCart type="submit">
+          <ButtonCart type="button">
             <ShoppingCart weight="fill" size={22} />
           </ButtonCart>
         </Actions>
