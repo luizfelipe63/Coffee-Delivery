@@ -4,11 +4,23 @@ import {
   CardCoffeInputs,
   ContainerInputs,
   HeaderInputs,
+  InputContainer,
   InputContent,
+  InputConplemnt
 } from './styles'
 
+interface ErrorsType {
+  errors: {
+    [key: string]: {
+      message: string;
+    };
+  };
+}
+
 export function FormDelivery() {
-  const { register} = useFormContext()
+  const { register, formState} = useFormContext()
+
+  const {errors} = formState as ErrorsType
 
   return (
     <CardCoffeInputs>
@@ -20,61 +32,76 @@ export function FormDelivery() {
         </div>
       </HeaderInputs>
       <ContainerInputs>
-        <InputContent>
-          <input 
-            type={'text'} 
-            placeholder="CEP" 
-            maxLength={8} 
-            {...register("cep")}
-            required
-          />
-         
-        </InputContent>
-        <InputContent>
-          <input 
-            type="text" 
-            placeholder="Rua" 
-            required 
-            {...register('street')} 
-          />
-        </InputContent>
-        <InputContent>
-          <input 
-            type="text" 
-            placeholder="Número" 
-            required 
-            {...register('number')} />
-        </InputContent>
-        <InputContent>
-          <input
-            type="text"
-            placeholder="Complemento"
-            {...register('complement')}
-          />
-          <span>Opcional</span>
-        </InputContent>
-        <InputContent>
-          <input 
-            type="text" 
-            placeholder="Bairro"  
-            required 
-            {...register('district')} />
-        </InputContent>
-        <InputContent>
-          <input 
-            type="text" 
-            placeholder="Cidade" 
-            required 
-            {...register('city')} />
-        </InputContent>
-        <InputContent>
-          <input 
-           type="text" 
-           placeholder="UF" 
-           required 
-           {...register('UF')} />
-        </InputContent>
-      </ContainerInputs>
+        <InputContainer>
+          <InputContent>
+            <input 
+              type="text" 
+              placeholder='CEP'
+              {...register('cep')}  />
+          </InputContent>
+          <span>{errors.cep?.message}</span>
+        </InputContainer>
+
+        <InputContainer>
+          <InputContent>
+            <input 
+              type="text" 
+              placeholder='Rua'
+              {...register('street')}  />
+          </InputContent>
+          <span>{errors.street?.message}</span>
+        </InputContainer>  
+
+        <InputContainer>
+          <InputContent>
+            <input 
+              type="text" 
+              placeholder='Número'
+              {...register('number')}  />
+          </InputContent>
+          <span>{errors.number?.message}</span>
+        </InputContainer>    
+
+        <InputContainer>
+          <InputConplemnt>
+            <input 
+              type="text" 
+              placeholder='Complemento'
+              {...register('complement')}  />
+              <span>Opcional</span>
+          </InputConplemnt>
+        </InputContainer> 
+
+        <InputContainer>
+          <InputContent>
+            <input 
+              type="text" 
+              placeholder='Bairro'
+              {...register('district')}  />
+          </InputContent>
+          <span>{errors.district?.message}</span>
+        </InputContainer>  
+
+        <InputContainer>
+          <InputContent>
+            <input 
+              type="text" 
+              placeholder='Cidade'
+              {...register('city')}  />
+          </InputContent>
+          <span>{errors.city?.message}</span>
+        </InputContainer>  
+
+        <InputContainer>
+          <InputContent>
+            <input 
+              type="text" 
+              placeholder='UF'
+              {...register('uf')}  />
+          </InputContent>
+          <span>{errors.uf?.message}</span>
+        </InputContainer>   
+       </ContainerInputs>
     </CardCoffeInputs>
   )
 }
