@@ -2,7 +2,7 @@ import { Minus, Plus } from "phosphor-react";
 import { useState } from "react";
 import { CountDown, QuantityButton } from './styles'
 
-export function CountDownCoffe(){
+export function CoffeQuantities(){
   const [quantityOfProducts, setQuantityOfProducts] = useState(1)
 
   function handleAddLessCoffe(){
@@ -12,11 +12,11 @@ export function CountDownCoffe(){
     setQuantityOfProducts(quantityOfProducts + 1)
   }
 
-  const disable  = quantityOfProducts <= 1
+  const disableCountDouwn  = quantityOfProducts <= 1
 
   return(
     <CountDown>
-      <QuantityButton disabled={disable}  onClick={handleAddLessCoffe} type="button">
+      <QuantityButton disabled={disableCountDouwn}  onClick={handleAddLessCoffe} type="button">
         <Minus/>
       </QuantityButton>
         {quantityOfProducts}

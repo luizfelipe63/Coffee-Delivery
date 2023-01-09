@@ -1,6 +1,6 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { FormEvent, useState } from 'react'
-import {CountDownCoffe } from '../CountDown'
+import { CoffeQuantities } from '../CoffeeQuantities'
 import {
   Actions,
   ButtonCart,
@@ -62,7 +62,7 @@ export function Card({image, name, description, tag, preço}: card) {
           </span>
         </div>
         <Actions >
-          <CountDownCoffe/>
+          <CoffeQuantities/>
           <ButtonCart type="button">
             <ShoppingCart weight="fill" size={22} />
           </ButtonCart>
