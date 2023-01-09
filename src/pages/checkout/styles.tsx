@@ -26,112 +26,6 @@ export const ContentForm = styled.form`
   }
 `
 
-export const CardCoffeInputs = styled.div`
-  border-radius: 8px;
-  padding: 2.5rem;
-  background: ${(props) => props.theme.color['base-card']};
-`
-
-export const ContainerInputs = styled.div`
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 12.5rem 1fr 3.75rem;
-
-  div {
-    :nth-child(2) {
-      grid-column: 1 / 4;
-    }
-
-    :nth-child(4) {
-      grid-column: 2 / 4;
-    }
-  }
-
-  @media (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 3rem;
-
-    div {
-      :nth-child(2),
-      :nth-child(3),
-      :nth-child(4),
-      :nth-child(5) {
-        grid-column: 1 / 3;
-      }
-    }
-  }
-`
-
-export const HeaderBase = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-
-  svg {
-    color: ${(props) => props.theme.color.yellow};
-  }
-
-  div {
-    p {
-      color: ${(props) => props.theme.color['base-subtitle']};
-    }
-
-    span {
-      font-size: 0.875rem;
-      color: ${(props) => props.theme.color['base-text']};
-    }
-  }
-`
-
-export const HeaderPayment = styled(HeaderBase)`
-  svg {
-    color: ${(props) => props.theme.color.purple};
-  }
-`
-
-export const CardCoffePayment = styled.div`
-  border-radius: 8px;
-  margin-top: 0.75rem;
-  padding: 2.5rem;
-  background: ${(props) => props.theme.color['base-card']};
-
-  display: flex;
-  flex-direction: column;
-`
-
-export const ButtonContent = styled.div`
-  display: flex;
-  gap: 0.75rem;
-
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-  }
-`
-
-export const SelectButton = styled.button`
-  background: ${(props) => props.theme.color['select-button']};
-  color: ${(props) => props.theme.color.text};
-  border: 0;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  padding: 1rem;
-  width: 11.125rem;
-
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-
-  svg {
-    color: ${(props) => props.theme.color.purple};
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`
-
 export const CoffeCard = styled.div`
   background: ${(props) => props.theme.color['base-card']};
   padding: 2.5rem;
@@ -142,10 +36,12 @@ export const CoffeCard = styled.div`
   flex-direction: column;
   gap: 0.75rem;
 
+
   @media (max-width: 768px) {
     width: 100%;
   }
 `
+
 export const InfoBase = styled.div`
   display: flex;
   gap: 0.75rem;

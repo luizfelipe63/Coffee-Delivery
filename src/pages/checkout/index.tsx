@@ -12,6 +12,10 @@ import {
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { SelectPayment } from './components/SelectPayment'
+import { useNavigate } from 'react-router-dom'
+import { CoffeContext} from '../../context/CoffeContext'
+import { useContext } from 'react'
+import { boolean } from 'zod'
 
 
 const newDeliveryFormValidationSchema =  zod.object({
@@ -21,17 +25,27 @@ const newDeliveryFormValidationSchema =  zod.object({
   complement:zod.string(),
   district: zod.string().min(1,'Informe o bairro'),
   city: zod.string().min(1,'Informe a cidade'),
-  uf:zod.string().min(1,'informe o UF').max(2, 'Informe o UF')
+  uf:zod.string().min(1,'Informe o UF').max(2, 'Informe o UF'),
+  MethodPayment: zod.string()
 })
 
 type NewDeliveryFormData = zod.infer<typeof newDeliveryFormValidationSchema>
 
+
 export function Checkout() {
+  const { creatNewDeliveryForm } =
+    useContext(CoffeContext)
   const createNewDelivery = useForm<NewDeliveryFormData>({
     resolver: zodResolver(newDeliveryFormValidationSchema),
   })
 
-  function handleSubmitPageSuccess(data: NewDeliveryFormData) {
+  const navigate = useNavigate()
+
+  function handleNewDelivery(data: NewDeliveryFormData) {
+    navigate('/success',{
+      state: data
+    })
+    creatNewDeliveryForm(data)
     console.log(data)
   }
 
@@ -41,7 +55,7 @@ export function Checkout() {
 
   return (
     <CheckoutContainer>
-      <ContentForm onSubmit={handleSubmit(handleSubmitPageSuccess)}>
+      <ContentForm onSubmit={handleSubmit(handleNewDelivery)}>
         <section>
           <h1>Complete seu pedido</h1>
           <FormProvider {...createNewDelivery}>
@@ -66,7 +80,7 @@ export function Checkout() {
               <p>Total</p>
               <span>R$ 33,20</span>
             </InfoTotal>
-            <ButtonCard>CONFIRMAR PEDIDO</ButtonCard>
+              <ButtonCard type='submit'>CONFIRMAR PEDIDO</ButtonCard>
           </CoffeCard>
         </section>
       </ContentForm>

@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { ThemeProvider } from 'styled-components'
 import { NavBar } from './components/NavBar'
+import { CoffeContextProvider } from './context/CoffeContext'
 import { Router } from './Router'
 import { GlobalStyle } from './styles/global'
 import { darkTheme, defaultTheme } from './styles/themes/default'
@@ -17,8 +18,10 @@ export function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : defaultTheme}>
       <BrowserRouter>
-        <NavBar toggleTheme={toggleTheme} stateDark={isDarkTheme} />
-        <Router />
+        <CoffeContextProvider>
+          <NavBar toggleTheme={toggleTheme} stateDark={isDarkTheme} />
+          <Router />
+        </CoffeContextProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>
