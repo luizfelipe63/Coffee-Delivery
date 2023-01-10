@@ -17,7 +17,6 @@ export const NavContainer = styled.nav`
 
 export const Actions = styled.div`
   display: flex;
-  align-items: center;
   gap: 1.25rem;
 `
 

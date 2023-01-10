@@ -62,7 +62,6 @@ export const FooterBuy = styled.footer`
 
 export const Actions = styled.form`
   display: flex;
-
 `
 
 export const ButtonCart = styled.button`
@@ -79,10 +78,7 @@ export const ButtonCart = styled.button`
 
   transition: background 0.1s;
 
-  :hover {
+  &:hover {
     background: ${(props) => props.theme.color['card-hover']};
   }
 `
-
-
-

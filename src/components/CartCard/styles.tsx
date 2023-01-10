@@ -29,7 +29,7 @@ export const ActionsCar = styled.div`
   margin-top: 0.5rem;
 `
 
-export const ButtonCartCard = styled.button `
+export const ButtonCartCard = styled.button`
   font-size: 0.75rem;
   padding: 0 0.5rem;
   border-radius: 6px;
@@ -45,5 +45,4 @@ export const ButtonCartCard = styled.button `
   svg {
     color: ${(props) => props.theme.color['icon-remove']};
   }
-
 `

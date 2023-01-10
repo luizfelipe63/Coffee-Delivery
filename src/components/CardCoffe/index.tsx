@@ -1,5 +1,6 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useContext, useState } from 'react'
+import { CoffeContext } from '../../context/CoffeContext'
 import { CoffeQuantities } from '../CoffeeQuantities'
 import {
   Actions,
@@ -12,58 +13,61 @@ import {
   TagContainer,
 } from './styles'
 
-
-interface card {
+export interface cardProps {
+  id: string
   image: string
   name: string
   description: string
   tag: string[]
-  preço: string
+  price: string
+  // quantity: number
 }
 
-export function Card({image, name, description, tag, preço}: card) {
+interface coffeCardProps {
+  coffe: cardProps
+}
 
-// const [creatNewCartCard, setCreatNewCartCard] = useState<card[]>([])
-// console.log(creatNewCartCard)
+export function Card({ coffe }: coffeCardProps) {
+  const { creatNewCartCard } = useContext(CoffeContext)
+  const [quantityOfCoffes, setQuantityOfCoffes] = useState(1)
 
-// function handleCreatCartCard(event: FormEvent){
-//   event.preventDefault()
+  function handleCreatCartCard() {
+    const addNewCartCoffe = { ...coffe }
+    creatNewCartCard(addNewCartCoffe)
+    console.log(coffe)
+  }
 
-//   const newCart: card = {
-//     description: '',
-//     image: '',
-//     name: '',
-//     tag:[],
-//     preço: ''
-//   }
+  function handleAddMoreCoffe() {
+    setQuantityOfCoffes((state) => state + 1)
+  }
 
-//   setCreatNewCartCard(state => [...state, newCart] )
+  function handleAddLessCoffe() {
+    setQuantityOfCoffes((state) => state - 1)
+  }
 
-
-// }
-
-
-
- 
   return (
     <CardCoffe>
-      <img src={image} alt="" />
+      <img src={coffe.image} alt="" />
       <TagContainer>
-        {tag.map((tag) => {
-          return <Tag>{tag}</Tag>
+        {coffe.tag.map((tag) => {
+          return <Tag key={tag}>{tag}</Tag>
         })}
       </TagContainer>
-      <Name>{name}</Name>
-      <Description>{description}</Description>
+      <Name>{coffe.name}</Name>
+      <Description>{coffe.description}</Description>
       <FooterBuy>
         <div>
           <span>
-            R$ <strong>{preço}</strong>
+            R$ <strong>{coffe.price}</strong>
           </span>
         </div>
-        <Actions >
-          <CoffeQuantities/>
-          <ButtonCart type="button">
+        <Actions>
+          <CoffeQuantities
+            quantity={quantityOfCoffes}
+            onDecrement={handleAddLessCoffe}
+            onIncrement={handleAddMoreCoffe}
+          />
+          <ButtonCart type="button" onClick={handleCreatCartCard}>
             <ShoppingCart weight="fill" size={22} />
           </ButtonCart>
         </Actions>

@@ -1,9 +1,12 @@
-import { NavLink } from 'react-router-dom'
-
 import { ShoppingCart, MapPin, MoonStars, SunDim } from 'phosphor-react'
 import Logo from '../../assets/Logo-coffe.svg'
 import LogoDark from '../../assets/Logo-darkMode.svg'
 import { Actions, Card, NavContainer, Location, CardToggle } from './styles'
+
+import { NavLink } from 'react-router-dom'
+
+import { useContext } from 'react'
+import { CoffeContext } from '../../context/CoffeContext'
 
 interface Props {
   toggleTheme: () => void
@@ -11,6 +14,8 @@ interface Props {
 }
 
 export function NavBar({ toggleTheme, stateDark }: Props) {
+  const { lengthNavBarCartCard } = useContext(CoffeContext)
+
   return (
     <NavContainer>
       <NavLink to={'/'}>
@@ -31,7 +36,7 @@ export function NavBar({ toggleTheme, stateDark }: Props) {
         <NavLink to={'/checkout'} title="carrinho">
           <Card>
             <ShoppingCart weight="fill" size={22} />
-            <span>3</span>
+            {lengthNavBarCartCard > 0 && <span>{lengthNavBarCartCard}</span>}
           </Card>
         </NavLink>
       </Actions>

@@ -1,25 +1,42 @@
 import { Trash } from 'phosphor-react'
-import Coffe from '../../assets/images/Coffee.svg'
 import { CoffeQuantities } from '../CoffeeQuantities'
 import { ActionsCar, ButtonCartCard, Details, InfoCoffe } from './styles'
+import { cardProps } from '../CardCoffe'
+import { useContext } from 'react'
+import { CoffeContext } from '../../context/CoffeContext'
 
-export function CoffeSelected() {
+interface cartCardCoffeProps {
+  coffe: cardProps
+}
+
+export function CoffeSelected({ coffe }: cartCardCoffeProps) {
+  const { DeleteCartCardCoffe, quantityOfCoffes, AddLessCoffe, AddMoreCoffe } =
+    useContext(CoffeContext)
+
+  function handleDeleteCartCardCoffe() {
+    DeleteCartCardCoffe(coffe.id)
+  }
+
   return (
     <InfoCoffe>
       <Details>
-        <img src={Coffe} alt="" />
+        <img src={coffe.image} alt="" />
         <div>
-          <span>Expresso Tradicional</span>
+          <span>{coffe.name}</span>
           <ActionsCar>
-            <CoffeQuantities/>
-            <ButtonCartCard type='button'>
+            <CoffeQuantities
+              quantity={quantityOfCoffes}
+              onDecrement={AddLessCoffe}
+              onIncrement={AddMoreCoffe}
+            />
+            <ButtonCartCard onClick={handleDeleteCartCardCoffe} type="button">
               <Trash size={16} />
               REMOVER
             </ButtonCartCard>
           </ActionsCar>
         </div>
       </Details>
-      <strong>R$ 9,90</strong>
+      <strong>R$ {coffe.price}</strong>
     </InfoCoffe>
   )
 }

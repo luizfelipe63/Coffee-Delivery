@@ -3,8 +3,6 @@ import background from '../../../../assets/Background.svg'
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  display: flex;
-  align-items: flex-start;
   padding: 5.625rem 0;
   gap: 3.5rem;
 
