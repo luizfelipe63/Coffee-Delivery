@@ -36,7 +36,6 @@ export const CoffeCard = styled.div`
   flex-direction: column;
   gap: 0.75rem;
 
-
   @media (max-width: 768px) {
     width: 100%;
   }

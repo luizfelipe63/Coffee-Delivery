@@ -4,7 +4,7 @@ export const CardCoffePayment = styled.div`
   border-radius: 8px;
   margin-top: 0.75rem;
   padding: 2.5rem;
-  background: ${props => props.theme.color['base-card']};
+  background: ${(props) => props.theme.color['base-card']};
 
   display: flex;
   flex-direction: column;
@@ -12,22 +12,21 @@ export const CardCoffePayment = styled.div`
 
 export const HeaderPayment = styled.div`
   display: flex;
-  align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 2rem;
 
   svg {
-    color: ${props => props.theme.color.purple};
+    color: ${(props) => props.theme.color.purple};
   }
 
   div {
     p {
-      color: ${props => props.theme.color['base-subtitle']};
+      color: ${(props) => props.theme.color['base-subtitle']};
     }
 
     span {
       font-size: 0.875rem;
-      color: ${props => props.theme.color['base-text']};
+      color: ${(props) => props.theme.color['base-text']};
     }
   }
 `
@@ -54,8 +53,8 @@ export const PaymentButton = styled.label`
   border-radius: 6px;
   font-size: 0.75rem;
   width: 11.16rem;
-  background: ${props => props.theme.color['base-button']};
-  color: ${props => props.theme.color['base-text']};
+  background: ${(props) => props.theme.color['base-button']};
+  color: ${(props) => props.theme.color['base-text']};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,11 +65,11 @@ export const PaymentButton = styled.label`
   opacity: 0.7;
 
   svg {
-    color: ${props => props.theme.color['purple-dark']};
+    color: ${(props) => props.theme.color['purple-dark']};
   }
 
   :hover {
-    background: ${props => props.theme.color['base-hover']};
+    background: ${(props) => props.theme.color['base-hover']};
   }
 `
 
@@ -79,5 +78,5 @@ export const AddBorderInput = styled.div`
   width: 11.16rem;
   height: 100%;
   border-radius: 6px;
-  border: 1px solid ${props => props.theme.color.purple};
+  border: 1px solid ${(props) => props.theme.color.purple};
 `

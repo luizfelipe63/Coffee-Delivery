@@ -6,21 +6,21 @@ import {
   HeaderInputs,
   InputContainer,
   InputContent,
-  InputConplemnt
+  InputConplemnt,
 } from './styles'
 
 interface ErrorsType {
   errors: {
     [key: string]: {
-      message: string;
-    };
-  };
+      message: string
+    }
+  }
 }
 
 export function FormDelivery() {
-  const { register, formState} = useFormContext()
+  const { register, formState } = useFormContext()
 
-  const {errors} = formState as ErrorsType
+  const { errors } = formState as ErrorsType
 
   return (
     <CardCoffeInputs>
@@ -34,74 +34,57 @@ export function FormDelivery() {
       <ContainerInputs>
         <InputContainer>
           <InputContent>
-            <input 
-              type="text" 
-              placeholder='CEP'
-              {...register('cep')}  />
+            <input type="text" placeholder="CEP" {...register('cep')} />
           </InputContent>
           <span>{errors.cep?.message}</span>
         </InputContainer>
 
         <InputContainer>
           <InputContent>
-            <input 
-              type="text" 
-              placeholder='Rua'
-              {...register('street')}  />
+            <input type="text" placeholder="Rua" {...register('street')} />
           </InputContent>
           <span>{errors.street?.message}</span>
-        </InputContainer>  
+        </InputContainer>
 
         <InputContainer>
           <InputContent>
-            <input 
-              type="text" 
-              placeholder='Número'
-              {...register('number')}  />
+            <input type="text" placeholder="Número" {...register('number')} />
           </InputContent>
           <span>{errors.number?.message}</span>
-        </InputContainer>    
+        </InputContainer>
 
         <InputContainer>
           <InputConplemnt>
-            <input 
-              type="text" 
-              placeholder='Complemento'
-              {...register('complement')}  />
-              <span>Opcional</span>
+            <input
+              type="text"
+              placeholder="Complemento"
+              {...register('complement')}
+            />
+            <span>Opcional</span>
           </InputConplemnt>
-        </InputContainer> 
+        </InputContainer>
 
         <InputContainer>
           <InputContent>
-            <input 
-              type="text" 
-              placeholder='Bairro'
-              {...register('district')}  />
+            <input type="text" placeholder="Bairro" {...register('district')} />
           </InputContent>
           <span>{errors.district?.message}</span>
-        </InputContainer>  
+        </InputContainer>
 
         <InputContainer>
           <InputContent>
-            <input 
-              type="text" 
-              placeholder='Cidade'
-              {...register('city')}  />
+            <input type="text" placeholder="Cidade" {...register('city')} />
           </InputContent>
           <span>{errors.city?.message}</span>
-        </InputContainer>  
+        </InputContainer>
 
         <InputContainer>
           <InputContent>
-            <input 
-              type="text" 
-              placeholder='UF'
-              {...register('uf')}  />
+            <input type="text" placeholder="UF" {...register('uf')} />
           </InputContent>
           <span>{errors.uf?.message}</span>
-        </InputContainer>   
-       </ContainerInputs>
+        </InputContainer>
+      </ContainerInputs>
     </CardCoffeInputs>
   )
 }

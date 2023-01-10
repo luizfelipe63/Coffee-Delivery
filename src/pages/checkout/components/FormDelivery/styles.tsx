@@ -3,27 +3,26 @@ import styled from 'styled-components'
 export const CardCoffeInputs = styled.div`
   border-radius: 8px;
   padding: 2.5rem;
-  background: ${props => props.theme.color['base-card']};
+  background: ${(props) => props.theme.color['base-card']};
 `
 
 export const HeaderInputs = styled.div`
   display: flex;
-  align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 2rem;
 
   svg {
-    color: ${props => props.theme.color.yellow};
+    color: ${(props) => props.theme.color.yellow};
   }
 
   div {
     p {
-      color: ${props => props.theme.color['base-subtitle']};
+      color: ${(props) => props.theme.color['base-subtitle']};
     }
 
     span {
       font-size: 0.875rem;
-      color: ${props => props.theme.color['base-text']};
+      color: ${(props) => props.theme.color['base-text']};
     }
   }
 `
@@ -65,7 +64,7 @@ export const InputContainer = styled.div`
 
   span {
     font-size: 0.875rem;
-    color: ${props => props.theme.color.danger};
+    color: ${(props) => props.theme.color.danger};
   }
 `
 
@@ -73,14 +72,14 @@ export const InputContent = styled.div`
   display: flex;
 
   border-radius: 6px;
-  border: 1px solid ${props => props.theme.color['base-border']};
-  background: ${props => props.theme.color['base-input']};
+  border: 1px solid ${(props) => props.theme.color['base-border']};
+  background: ${(props) => props.theme.color['base-input']};
 
-  border-top: 1px solid ${props => props.theme.color['base-border']};
-  border-bottom: 1px solid ${props => props.theme.color['base-border']};
+  border-top: 1px solid ${(props) => props.theme.color['base-border']};
+  border-bottom: 1px solid ${(props) => props.theme.color['base-border']};
 
   :focus-within {
-    border: 1px solid ${props => props.theme.color.yellow};
+    border: 1px solid ${(props) => props.theme.color.yellow};
   }
 
   span {
@@ -92,19 +91,10 @@ export const InputContent = styled.div`
   input {
     padding: 0.75rem;
     font-size: 0.875rem;
-    color: ${props => props.theme.color['base-text']};
+    color: ${(props) => props.theme.color['base-text']};
     border: 0;
     background: transparent;
     width: 100%;
-
-    ::placeholder {
-      font-size: 1rem;
-      color: ${props => props.theme.color['base-text']};
-    }
-
-    :focus {
-      border-color: transparent;
-    }
   }
 `
 export const InputConplemnt = styled(InputContent)`
@@ -113,6 +103,6 @@ export const InputConplemnt = styled(InputContent)`
 
   span {
     font-style: italic;
-    color: ${props => props.theme.color['base-labal']};
+    color: ${(props) => props.theme.color['base-labal']};
   }
 `

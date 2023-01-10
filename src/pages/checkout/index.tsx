@@ -13,28 +13,24 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { SelectPayment } from './components/SelectPayment'
 import { useNavigate } from 'react-router-dom'
-import { CoffeContext} from '../../context/CoffeContext'
+import { CoffeContext } from '../../context/CoffeContext'
 import { useContext } from 'react'
-import { boolean } from 'zod'
 
-
-const newDeliveryFormValidationSchema =  zod.object({
-  cep: zod.string().min(8,'Informe seu CEP'),
+const newDeliveryFormValidationSchema = zod.object({
+  cep: zod.string().min(8, 'Informe seu CEP'),
   street: zod.string().min(1, 'Informe a sua rua'),
   number: zod.string().min(1, 'Informe o número'),
-  complement:zod.string(),
-  district: zod.string().min(1,'Informe o bairro'),
-  city: zod.string().min(1,'Informe a cidade'),
-  uf:zod.string().min(1,'Informe o UF').max(2, 'Informe o UF'),
-  MethodPayment: zod.string()
+  complement: zod.string(),
+  district: zod.string().min(1, 'Informe o bairro'),
+  city: zod.string().min(1, 'Informe a cidade'),
+  uf: zod.string().min(1, 'Informe o UF').max(2, 'Informe o UF'),
+  MethodPayment: zod.string(),
 })
 
 type NewDeliveryFormData = zod.infer<typeof newDeliveryFormValidationSchema>
 
-
 export function Checkout() {
-  const { creatNewDeliveryForm } =
-    useContext(CoffeContext)
+  const { creatNewDeliveryForm, newCartCard } = useContext(CoffeContext)
   const createNewDelivery = useForm<NewDeliveryFormData>({
     resolver: zodResolver(newDeliveryFormValidationSchema),
   })
@@ -42,16 +38,14 @@ export function Checkout() {
   const navigate = useNavigate()
 
   function handleNewDelivery(data: NewDeliveryFormData) {
-    navigate('/success',{
-      state: data
+    navigate('/success', {
+      state: data,
     })
     creatNewDeliveryForm(data)
     console.log(data)
   }
 
   const { handleSubmit } = createNewDelivery
-
-
 
   return (
     <CheckoutContainer>
@@ -60,14 +54,15 @@ export function Checkout() {
           <h1>Complete seu pedido</h1>
           <FormProvider {...createNewDelivery}>
             <FormDelivery />
-            <SelectPayment/>
+            <SelectPayment />
           </FormProvider>
         </section>
         <section>
           <h1>Cafés selecionados</h1>
           <CoffeCard>
-            <CoffeSelected />
-            <CoffeSelected />
+            {newCartCard.map((item) => {
+              return <CoffeSelected key={item.id} coffe={item} />
+            })}
             <InfoItens>
               <p>Total de itens</p>
               <span>R$ 29,70</span>
@@ -80,7 +75,7 @@ export function Checkout() {
               <p>Total</p>
               <span>R$ 33,20</span>
             </InfoTotal>
-              <ButtonCard type='submit'>CONFIRMAR PEDIDO</ButtonCard>
+            <ButtonCard type="submit">CONFIRMAR PEDIDO</ButtonCard>
           </CoffeCard>
         </section>
       </ContentForm>
