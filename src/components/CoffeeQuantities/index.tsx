@@ -1,29 +1,33 @@
-import { Minus, Plus } from "phosphor-react";
-import { useState } from "react";
+import { Minus, Plus } from 'phosphor-react'
+import { useContext } from 'react'
+import { CoffeContext } from '../../context/CoffeContext'
+import { cardProps } from '../CardCoffe'
 import { CountDown, QuantityButton } from './styles'
 
-export function CoffeQuantities(){
-  const [quantityOfProducts, setQuantityOfProducts] = useState(1)
+interface CoffeQuantitiesProps {
+  quantity: number
+  onIncrement: () => void
+  onDecrement: () => void
+}
 
-  function handleAddLessCoffe(){
-    setQuantityOfProducts(quantityOfProducts - 1)
-  }
-  function handleAddMoreCoffe(){
-    setQuantityOfProducts(quantityOfProducts + 1)
-  }
-
-  const disableCountDouwn  = quantityOfProducts <= 1
-
-  return(
+export function CoffeQuantities({
+  quantity,
+  onIncrement,
+  onDecrement,
+}: CoffeQuantitiesProps) {
+  return (
     <CountDown>
-      <QuantityButton disabled={disableCountDouwn}  onClick={handleAddLessCoffe} type="button">
-        <Minus/>
+      <QuantityButton
+        disabled={quantity <= 1}
+        onClick={onDecrement}
+        type="button"
+      >
+        <Minus />
       </QuantityButton>
-        {quantityOfProducts}
-      <QuantityButton onClick={handleAddMoreCoffe} type="button">
+      {quantity}
+      <QuantityButton onClick={onIncrement} type="button">
         <Plus />
       </QuantityButton>
     </CountDown>
   )
-  
 }

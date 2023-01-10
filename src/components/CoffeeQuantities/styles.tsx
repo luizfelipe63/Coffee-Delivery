@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CountDown = styled.div`
-  background: ${props => props.theme.color['base-button']};
+  background: ${(props) => props.theme.color['base-button']};
   padding: 0.5rem;
   margin-right: 0.5rem;
   border-radius: 6px;
@@ -16,7 +16,7 @@ export const CountDown = styled.div`
   gap: 0.25rem;
 
   svg {
-    color: ${props => props.theme.color['card-button']};
+    color: ${(props) => props.theme.color['card-button']};
   }
 `
 
@@ -25,10 +25,10 @@ export const QuantityButton = styled.button`
   border: 0;
   line-height: 0;
   cursor: pointer;
-  color: ${props => props.theme.color.purple};
+  color: ${(props) => props.theme.color.purple};
 
   &:hover {
-    color: ${props => props.theme.color['purple-dark']};
+    color: ${(props) => props.theme.color['purple-dark']};
   }
   &:disabled {
     opacity: 0.4;
