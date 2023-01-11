@@ -1,7 +1,4 @@
 import { Minus, Plus } from 'phosphor-react'
-import { useContext } from 'react'
-import { CoffeContext } from '../../context/CoffeContext'
-import { cardProps } from '../CardCoffe'
 import { CountDown, QuantityButton } from './styles'
 
 interface CoffeQuantitiesProps {

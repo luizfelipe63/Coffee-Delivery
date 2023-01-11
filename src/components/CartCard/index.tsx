@@ -10,11 +10,23 @@ interface cartCardCoffeProps {
 }
 
 export function CoffeSelected({ coffe }: cartCardCoffeProps) {
-  const { DeleteCartCardCoffe, quantityOfCoffes, AddLessCoffe, AddMoreCoffe } =
-    useContext(CoffeContext)
+  const {
+    DeleteCartCardCoffe,
+    IncrementCartCardCoffe,
+    DecrementCartCardCoffe,
+    ItemsValue,
+  } = useContext(CoffeContext)
 
   function handleDeleteCartCardCoffe() {
     DeleteCartCardCoffe(coffe.id)
+  }
+
+  function handleIncrementCartCardCoffe() {
+    IncrementCartCardCoffe(coffe.id)
+  }
+
+  function handleDecrementCartCardCoffe() {
+    DecrementCartCardCoffe(coffe.id)
   }
 
   return (
@@ -25,9 +37,9 @@ export function CoffeSelected({ coffe }: cartCardCoffeProps) {
           <span>{coffe.name}</span>
           <ActionsCar>
             <CoffeQuantities
-              quantity={quantityOfCoffes}
-              onDecrement={AddLessCoffe}
-              onIncrement={AddMoreCoffe}
+              quantity={coffe.quantity}
+              onDecrement={handleDecrementCartCardCoffe}
+              onIncrement={handleIncrementCartCardCoffe}
             />
             <ButtonCartCard onClick={handleDeleteCartCardCoffe} type="button">
               <Trash size={16} />

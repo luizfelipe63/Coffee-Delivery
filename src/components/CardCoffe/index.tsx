@@ -20,7 +20,7 @@ export interface cardProps {
   description: string
   tag: string[]
   price: string
-  // quantity: number
+  quantity: number
 }
 
 interface coffeCardProps {
@@ -29,10 +29,10 @@ interface coffeCardProps {
 
 export function Card({ coffe }: coffeCardProps) {
   const { creatNewCartCard } = useContext(CoffeContext)
-  const [quantityOfCoffes, setQuantityOfCoffes] = useState(1)
+  const [quantity, setQuantityOfCoffes] = useState(1)
 
   function handleCreatCartCard() {
-    const addNewCartCoffe = { ...coffe }
+    const addNewCartCoffe = { ...coffe, quantity }
     creatNewCartCard(addNewCartCoffe)
     console.log(coffe)
   }
@@ -63,7 +63,7 @@ export function Card({ coffe }: coffeCardProps) {
         </div>
         <Actions>
           <CoffeQuantities
-            quantity={quantityOfCoffes}
+            quantity={quantity}
             onDecrement={handleAddLessCoffe}
             onIncrement={handleAddMoreCoffe}
           />

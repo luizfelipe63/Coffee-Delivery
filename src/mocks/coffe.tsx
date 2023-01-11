@@ -21,6 +21,7 @@ export const CoffeCard = [
     description: 'O tradicional café feito com água quente e grãos moídos',
     price: '9,90',
     tag: ['TRADICIONAL'],
+    quantity: 0,
   },
   {
     id: '2',
@@ -29,6 +30,7 @@ export const CoffeCard = [
     description: 'Expresso diluído, menos intenso que o tradicional',
     price: '9,90',
     tag: ['TRADICIONAL'],
+    quantity: 0,
   },
   {
     id: '3',
@@ -37,6 +39,7 @@ export const CoffeCard = [
     description: 'Café expresso tradicional com espuma cremosa',
     price: '9,90',
     tag: ['TRADICIONAL'],
+    quantity: 0,
   },
   {
     id: '4',
@@ -45,6 +48,7 @@ export const CoffeCard = [
     description: 'Bebida preparada com café expresso e cubos de gelo',
     price: '8,90',
     tag: ['TRADICIONAL', 'GELADO'],
+    quantity: 0,
   },
   {
     id: '5',
@@ -53,6 +57,7 @@ export const CoffeCard = [
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
     price: '10,90',
     tag: ['TRADICIONAL', 'COM LEITE'],
+    quantity: 0,
   },
   {
     id: '6',
@@ -62,6 +67,7 @@ export const CoffeCard = [
       'Uma dose de café expresso com o dobro de leite e espuma cremosa',
     price: '10,90',
     tag: ['TRADICIONAL', 'COM LEITE'],
+    quantity: 0,
   },
   {
     id: '7',
@@ -71,6 +77,7 @@ export const CoffeCard = [
       'Bebida com canela feita de doses iguais de café, leite e espuma',
     price: '10,90',
     tag: ['TRADICIONAL', 'COM LEITE'],
+    quantity: 0,
   },
   {
     id: '8',
@@ -80,6 +87,7 @@ export const CoffeCard = [
       'Café expresso misturado com um pouco de leite quente e espuma',
     price: '10,90',
     tag: ['TRADICIONAL', 'COM LEITE'],
+    quantity: 0,
   },
   {
     id: '9',
@@ -88,6 +96,7 @@ export const CoffeCard = [
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
     price: '10,90',
     tag: ['TRADICIONAL', 'COM LEITE'],
+    quantity: 0,
   },
   {
     id: '10',
@@ -96,6 +105,7 @@ export const CoffeCard = [
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
     price: '10,90',
     tag: ['ESPECIAL', 'COM LEITE'],
+    quantity: 0,
   },
   {
     id: '11',
@@ -105,6 +115,7 @@ export const CoffeCard = [
       'Drink gelado de café expresso com rum, creme de leite e hortelã',
     price: '12,90',
     tag: ['ESPECIAL', 'ALCOÓLICO', 'GELADO'],
+    quantity: 0,
   },
   {
     id: '12',
@@ -113,6 +124,7 @@ export const CoffeCard = [
     description: 'Bebida adocicada preparada com café e leite de coco',
     price: '13,90',
     tag: ['ESPECIAL'],
+    quantity: 0,
   },
   {
     id: '13',
@@ -121,6 +133,7 @@ export const CoffeCard = [
     description: 'Bebida preparada com grãos de café árabe e especiarias',
     price: '24,90',
     tag: ['ESPECIAL'],
+    quantity: 0,
   },
   {
     id: '14',
@@ -129,5 +142,6 @@ export const CoffeCard = [
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
     price: '14,90',
     tag: ['ESPECIAL', 'ALCOÓLICO'],
+    quantity: 0,
   },
 ]
