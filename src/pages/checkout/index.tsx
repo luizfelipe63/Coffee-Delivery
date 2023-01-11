@@ -30,12 +30,17 @@ const newDeliveryFormValidationSchema = zod.object({
 type NewDeliveryFormData = zod.infer<typeof newDeliveryFormValidationSchema>
 
 export function Checkout() {
-  const { creatNewDeliveryForm, newCartCard } = useContext(CoffeContext)
+  const { creatNewDeliveryForm, newCartCard, ItemsValue } =
+    useContext(CoffeContext)
   const createNewDelivery = useForm<NewDeliveryFormData>({
     resolver: zodResolver(newDeliveryFormValidationSchema),
   })
 
   const navigate = useNavigate()
+
+  const totalItensInDelivery = ItemsValue + 3.5
+  const FormatePrice = totalItensInDelivery.toFixed(2).replace('.', ',')
+  const FormateTotalItens = ItemsValue.toFixed(2).replace('.', ',')
 
   function handleNewDelivery(data: NewDeliveryFormData) {
     navigate('/success', {
@@ -65,7 +70,7 @@ export function Checkout() {
             })}
             <InfoItens>
               <p>Total de itens</p>
-              <span>R$ 29,70</span>
+              <span>R$ {FormateTotalItens}</span>
             </InfoItens>
             <InfoItens>
               <p>Entrega</p>
@@ -73,7 +78,7 @@ export function Checkout() {
             </InfoItens>
             <InfoTotal>
               <p>Total</p>
-              <span>R$ 33,20</span>
+              <span>R$ {FormatePrice}</span>
             </InfoTotal>
             <ButtonCard type="submit">CONFIRMAR PEDIDO</ButtonCard>
           </CoffeCard>
