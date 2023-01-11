@@ -47,7 +47,6 @@ export function Checkout() {
       state: data,
     })
     creatNewDeliveryForm(data)
-    console.log(data)
   }
 
   const { handleSubmit } = createNewDelivery

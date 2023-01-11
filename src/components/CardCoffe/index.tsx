@@ -34,7 +34,6 @@ export function Card({ coffe }: coffeCardProps) {
   function handleCreatCartCard() {
     const addNewCartCoffe = { ...coffe, quantity }
     creatNewCartCard(addNewCartCoffe)
-    console.log(coffe)
   }
 
   function handleAddMoreCoffe() {

@@ -14,7 +14,6 @@ export function CoffeSelected({ coffe }: cartCardCoffeProps) {
     DeleteCartCardCoffe,
     IncrementCartCardCoffe,
     DecrementCartCardCoffe,
-    ItemsValue,
   } = useContext(CoffeContext)
 
   function handleDeleteCartCardCoffe() {
