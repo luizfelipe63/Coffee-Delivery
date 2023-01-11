@@ -36,6 +36,7 @@ export const defaultTheme = {
 
     background: '#FAFAFA',
     White: '#FFF',
+    danger: '#F03847',
   },
   layout: {
     width: 'min(1120px, 100%)',
@@ -76,8 +77,11 @@ export const darkTheme = {
     text: '#574F4D',
     'icon-remove': '#3B2C22',
 
+    'select-button': '#E6E5E5',
+
     background: '#3B2C22',
     White: '#FFF',
+    danger: '#F03847',
   },
   layout: {
     width: 'min(1120px, 100%)',
