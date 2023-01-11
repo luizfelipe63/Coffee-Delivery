@@ -17,10 +17,9 @@ interface CoffeContextType {
   newCartCard: cardProps[]
   delivery: OrderInfos[]
   lengthNavBarCartCard: number
-  quantityOfCoffes: number
-  // DisableCounterQuantity: boolean
-  AddMoreCoffe: () => void
-  AddLessCoffe: () => void
+  ItemsValue: number
+  IncrementCartCardCoffe: (id: string) => void
+  DecrementCartCardCoffe: (id: string) => void
   DeleteCartCardCoffe: (id: string) => void
   creatNewCartCard: (coffe: cardProps) => void
   creatNewDeliveryForm: (data: OrderInfos) => void
@@ -34,9 +33,15 @@ interface CoffeContetexProviderProps {
 
 export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
   const [delivery, setDeliveryState] = useState<OrderInfos[]>([])
-  const [quantityOfCoffes, setQuantityOfCoffes] = useState(1)
 
   const [newCartCard, setCreatNewCartCard] = useState<cardProps[]>([])
+
+  const lengthNavBarCartCard = newCartCard.length
+
+  const ItemsValue = newCartCard.reduce((acumulador, valorAtual) => {
+    return (acumulador +=
+      parseFloat(valorAtual.price.replace(',', '.')) * valorAtual.quantity)
+  }, 0)
 
   function creatNewCartCard(coffe: cardProps) {
     const orderAlreadyExist = newCartCard.findIndex((coffeeCart) => {
@@ -49,6 +54,7 @@ export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
           if (coffe.id === item.id) {
             return {
               ...item,
+              quantity: item.quantity + coffe.quantity,
             }
           } else {
             return item
@@ -60,14 +66,35 @@ export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
     }
   }
 
-  function AddLessCoffe() {
-    setQuantityOfCoffes(quantityOfCoffes - 1)
-  }
-  function AddMoreCoffe() {
-    setQuantityOfCoffes(quantityOfCoffes + 1)
+  function IncrementCartCardCoffe(id: string) {
+    setCreatNewCartCard((state) =>
+      state.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          }
+        } else {
+          return item
+        }
+      }),
+    )
   }
 
-  // const DisableCounterQuantity = quantityOfCoffes <= 0
+  function DecrementCartCardCoffe(id: string) {
+    setCreatNewCartCard((state) =>
+      state.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            quantity: item.quantity - 1,
+          }
+        } else {
+          return item
+        }
+      }),
+    )
+  }
 
   function DeleteCartCardCoffe(id: string) {
     const cartCardWhithoutDeleteOne = newCartCard.filter((cartCoffe) => {
@@ -81,8 +108,6 @@ export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
     setDeliveryState((state) => [...state, data])
   }
 
-  const lengthNavBarCartCard = newCartCard.length
-
   return (
     <CoffeContext.Provider
       value={{
@@ -92,9 +117,9 @@ export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
         newCartCard,
         lengthNavBarCartCard,
         DeleteCartCardCoffe,
-        AddMoreCoffe,
-        AddLessCoffe,
-        quantityOfCoffes,
+        IncrementCartCardCoffe,
+        DecrementCartCardCoffe,
+        ItemsValue,
       }}
     >
       {children}
