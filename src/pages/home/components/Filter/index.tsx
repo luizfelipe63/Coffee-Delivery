@@ -1,67 +1,20 @@
-import { ChangeEvent, useEffect, useState } from 'react'
-import { ButtonFilter, FilterContent } from './styles'
-import { cardProps } from '../../../../components/CardCoffe'
-import { CoffeCard } from '../../../../mocks/coffe'
-import { FormProps } from 'react-router-dom'
-
-const databutton = [
-  {
-    name: 'Todos',
-    value: 'Todos',
-  },
-  {
-    name: 'Tradicional',
-    value: 'Tradicional',
-  },
-  {
-    name: 'Especial',
-    value: 'Especial',
-  },
-  {
-    name: 'Com Leite',
-    value: 'Com Leite',
-  },
-  {
-    name: 'Alcoólico',
-    value: 'Alcoólico',
-  },
-  {
-    name: 'Gelado',
-    value: 'Gelado',
-  },
-]
+import { useContext } from 'react'
+import { CoffeContext, FilterProps } from '../../../../context/CoffeContext'
+import { databutton } from '../../../../mocks/buttonFilter'
+import { FilterContent, OptionsFilter } from './styles'
 
 export function Filter() {
-  // const [filterTags, setFilterTags] = useState<cardProps[]>([])
-
-  // useEffect(() => {
-  //   setFilterTags()
-  // }, [])
-
-  // function filterTag(tagType: string[]) {
-  //   const filtredTags = CoffeCard.filter((type) => type.tag === tagType)
-  //   return filtredTags
-  // }
-
-  // function handleFilterTagCard(e: ChangeEvent<HTMLButtonElement>) {
-  //   const filterCardCoffe = e.target.value
-
-  //   filterCardCoffe !== 'Todos'
-  //     ? setFilterTags(filterTag(filterCardCoffe))
-  //     : setFilterTags()
-  // }
-
+  const { updateFilter } = useContext(CoffeContext)
   return (
     <FilterContent>
-      {databutton.map((type) => {
+      {databutton.map((coffes) => {
         return (
-          <ButtonFilter
-            value={type.value}
-            // onClick={handleFilterTagCard}
-            key={type.value}
+          <OptionsFilter
+            key={coffes.value}
+            onClick={() => updateFilter(coffes.value as FilterProps)}
           >
-            {type.name}
-          </ButtonFilter>
+            {coffes.name}
+          </OptionsFilter>
         )
       })}
     </FilterContent>

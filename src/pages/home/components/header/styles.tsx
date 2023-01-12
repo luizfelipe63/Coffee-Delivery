@@ -1,18 +1,24 @@
 import styled from 'styled-components'
-import background from '../../../../assets/Background.svg'
 
-export const HeaderContainer = styled.div`
+interface bacgroundProps {
+  background: string
+}
+
+export const HeaderContainer = styled.div<bacgroundProps>`
   width: 100%;
   padding: 5.625rem 0;
   gap: 3.5rem;
 
-  background: url(${background}) no-repeat center;
+  background: url(${(props) => props.theme.background.background}) no-repeat
+    center;
 
   background-size: 100%;
 
-  @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-    background: url(${background}) repeat-y top;
+  @media (max-width: 1120px) {
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: url(${(props) => props.theme.background.background}) repeat-y
+      top;
   }
 `
 
@@ -22,7 +28,7 @@ export const Content = styled.div`
   display: flex;
   gap: 3.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     img {
       display: none;
     }

@@ -13,11 +13,21 @@ interface OrderInfos {
   MethodPayment: string
 }
 
+export type FilterProps =
+  | 'Todos'
+  | 'Tradicional'
+  | 'Especial'
+  | 'Com Leite'
+  | 'Alcoólico'
+  | 'Gelado'
+
 interface CoffeContextType {
   newCartCard: cardProps[]
   delivery: OrderInfos[]
   lengthNavBarCartCard: number
   ItemsValue: number
+  filter: FilterProps
+  updateFilter: (filterValue: FilterProps) => void
   IncrementCartCardCoffe: (id: string) => void
   DecrementCartCardCoffe: (id: string) => void
   DeleteCartCardCoffe: (id: string) => void
@@ -33,8 +43,8 @@ interface CoffeContetexProviderProps {
 
 export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
   const [delivery, setDeliveryState] = useState<OrderInfos[]>([])
-
   const [newCartCard, setCreatNewCartCard] = useState<cardProps[]>([])
+  const [filter, setFilter] = useState<FilterProps>('Todos')
 
   const lengthNavBarCartCard = newCartCard.length
 
@@ -42,6 +52,10 @@ export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
     return (acumulador +=
       parseFloat(valorAtual.price.replace(',', '.')) * valorAtual.quantity)
   }, 0)
+
+  function updateFilter(filterValue: FilterProps) {
+    setFilter(filterValue)
+  }
 
   function creatNewCartCard(coffe: cardProps) {
     const orderAlreadyExist = newCartCard.findIndex((coffeeCart) => {
@@ -120,6 +134,8 @@ export function CoffeContextProvider({ children }: CoffeContetexProviderProps) {
         IncrementCartCardCoffe,
         DecrementCartCardCoffe,
         ItemsValue,
+        filter,
+        updateFilter,
       }}
     >
       {children}

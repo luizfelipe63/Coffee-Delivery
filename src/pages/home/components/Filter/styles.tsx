@@ -1,20 +1,14 @@
 import styled from 'styled-components'
 
-export const FilterContent = styled.div`
-  display: flex;
-  gap: 0.5rem;
+export const FilterContent = styled.select`
+  padding: 0.5rem;
+  width: 10rem;
+  background: ${(props) => props.theme.color['base-button']};
+  color: ${(props) => props.theme.color['base-title']};
+  border: 0;
+  border-radius: 8px;
 `
-export const ButtonFilter = styled.button`
-  padding: 0.375rem 0.75rem;
-  border-radius: 100px;
-  border: 1px solid ${(props) => props.theme.color.yellow};
-  font-size: 0.75rem;
-  cursor: pointer;
-  background: transparent;
-  color: ${(props) => props.theme.color['yellow-dark']};
-  font-weight: bold;
-
-  &:hover {
-    background-color: ${(props) => props.theme.color['yellow-ligth']};
-  }
+export const OptionsFilter = styled.option`
+  color: ${(props) => props.theme.color['base-text']};
+  font-size: 1rem;
 `

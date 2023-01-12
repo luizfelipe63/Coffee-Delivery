@@ -9,12 +9,8 @@ export const HomeContainer = styled.main`
     font-size: 2rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     padding: 2rem 1.5rem;
-
-    h1 {
-      text-align: center;
-    }
   }
 `
 
@@ -31,7 +27,11 @@ export const HomeContent = styled.section`
   grid-template-columns: repeat(4, 16rem);
   gap: 2rem;
 
-  @media (max-width: 1120px) {
+  @media (min-width: 640px) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
   }
 `
