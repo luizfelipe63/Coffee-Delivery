@@ -9,7 +9,7 @@ export const CheckoutContainer = styled.div`
     margin-bottom: 1rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     padding: 2rem 1.5rem;
   }
 `
@@ -20,7 +20,7 @@ export const ContentForm = styled.form`
   display: flex;
   gap: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     display: flex;
     flex-direction: column;
   }
@@ -36,7 +36,7 @@ export const CoffeCard = styled.div`
   flex-direction: column;
   gap: 0.75rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     width: 100%;
   }
 `

@@ -5,8 +5,9 @@ export const SuccessContainer = styled.main`
   width: ${({ theme }) => theme.layout.width};
   margin: 5rem auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     padding: 2rem 1.5rem;
+    margin: 2.5rem auto;
   }
 `
 
@@ -15,7 +16,7 @@ export const ContentSuccess = styled.div`
   gap: 6.25rem;
   margin-top: 2.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     display: flex;
     flex-direction: column;
   }
@@ -52,7 +53,7 @@ export const OrderInfo = styled.div`
   background-clip: padding-box, border-box;
   padding: 2.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     width: 100%;
   }
 `
