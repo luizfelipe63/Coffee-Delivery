@@ -1,3 +1,5 @@
+import backgroundImg from '../../assets/Background.svg'
+
 export const defaultTheme = {
   color: {
     'yellow-dark': '#C47F17',
@@ -38,8 +40,13 @@ export const defaultTheme = {
     White: '#FFF',
     danger: '#F03847',
   },
+
   layout: {
     width: 'min(1120px, 100%)',
+  },
+
+  background: {
+    background: backgroundImg,
   },
 }
 
@@ -83,7 +90,12 @@ export const darkTheme = {
     White: '#FFF',
     danger: '#F03847',
   },
+
   layout: {
     width: 'min(1120px, 100%)',
+  },
+
+  background: {
+    background: 'none',
   },
 }
