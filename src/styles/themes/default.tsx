@@ -1,4 +1,4 @@
-import backgroundImg from '../../assets/Background.svg'
+import background from '../../assets/Background.svg'
 
 export const defaultTheme = {
   color: {
@@ -24,6 +24,8 @@ export const defaultTheme = {
     'card-button': '#4B2995',
     'card-hover': '#8047F8',
 
+    Oparations: '#8047F8',
+
     'base-border': '#E6E5E5',
     'base-input': '#EDEDED',
 
@@ -46,7 +48,7 @@ export const defaultTheme = {
   },
 
   background: {
-    background: backgroundImg,
+    background,
   },
 }
 
@@ -73,6 +75,8 @@ export const darkTheme = {
     'card-input': '#FFF',
     'card-button': '#291C18',
     'card-hover': '#402C26',
+
+    Oparations: '#402C26',
 
     'base-input': 'transparent',
     'base-border': '#F1E9C9',
