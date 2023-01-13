@@ -11,4 +11,5 @@ export const FilterContent = styled.select`
 export const OptionsFilter = styled.option`
   color: ${(props) => props.theme.color['base-text']};
   font-size: 1rem;
+  font-family: 'Baloo 2', cursive;
 `

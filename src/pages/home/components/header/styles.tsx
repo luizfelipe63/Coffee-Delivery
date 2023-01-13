@@ -1,24 +1,20 @@
 import styled from 'styled-components'
 
-interface bacgroundProps {
-  background: string
-}
-
-export const HeaderContainer = styled.div<bacgroundProps>`
+export const HeaderContainer = styled.div`
   width: 100%;
-  padding: 5.625rem 0;
+  padding: 11.5rem 0 5.625rem;
   gap: 3.5rem;
 
   background: url(${(props) => props.theme.background.background}) no-repeat
-    center;
+    center center;
 
   background-size: 100%;
 
   @media (max-width: 1120px) {
-    padding: 2.5rem 1.5rem;
+    padding: 11.5rem 1.5rem 1rem;
     margin-bottom: 1.5rem;
     background: url(${(props) => props.theme.background.background}) repeat-y
-      top;
+      center center;
   }
 `
 

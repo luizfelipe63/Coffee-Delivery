@@ -53,8 +53,8 @@ export const PaymentButton = styled.label`
   border-radius: 6px;
   font-size: 0.75rem;
   width: 11.16rem;
-  background: ${(props) => props.theme.color['base-button']};
-  color: ${(props) => props.theme.color['base-text']};
+  background: ${(props) => props.theme.color['select-button']};
+  color: ${(props) => props.theme.color.text};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,12 +65,12 @@ export const PaymentButton = styled.label`
   opacity: 0.7;
 
   svg {
-    color: ${(props) => props.theme.color['purple-dark']};
+    color: ${(props) => props.theme.color.purple};
   }
-
+  /* 
   :hover {
     background: ${(props) => props.theme.color['base-hover']};
-  }
+  } */
 `
 
 export const AddBorderInput = styled.div`

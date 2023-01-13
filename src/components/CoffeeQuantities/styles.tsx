@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const CountDown = styled.div`
-  background: ${(props) => props.theme.color['base-button']};
+  background: ${(props) => props.theme.color['card-input']};
+  color: ${(props) => props.theme.color.text};
   padding: 0.5rem;
   margin-right: 0.5rem;
   border-radius: 6px;
@@ -16,7 +17,7 @@ export const CountDown = styled.div`
   gap: 0.25rem;
 
   svg {
-    color: ${(props) => props.theme.color['card-button']};
+    color: ${(props) => props.theme.color.Oparations};
   }
 `
 

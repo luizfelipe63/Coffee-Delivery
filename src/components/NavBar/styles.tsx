@@ -1,18 +1,23 @@
 import styled from 'styled-components'
 
-export const NavContainer = styled.nav`
+export const NavContainer = styled.header`
+  position: fixed;
+  padding: 2rem 0;
+  background-color: ${(props) => props.theme.color.background};
+  width: 100%;
+  z-index: 99;
+
+  @media (max-width: 1120px) {
+    padding: 2rem 1.5rem;
+  }
+`
+
+export const NavContent = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 2rem 0;
-
-  @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-  }
-
-  background-color: ${(props) => props.theme.color.background};
-  width: ${({ theme }) => theme.layout.width};
+  width: ${(props) => props.theme.layout.width};
 `
 
 export const Actions = styled.div`

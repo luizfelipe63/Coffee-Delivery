@@ -3,11 +3,12 @@ import { IconBase } from '../home/components/header/styles'
 
 export const SuccessContainer = styled.main`
   width: ${({ theme }) => theme.layout.width};
-  margin: 5rem auto;
+  margin: 0 auto;
+  padding: 10rem 0 1rem;
 
   @media (max-width: 1120px) {
-    padding: 2rem 1.5rem;
-    margin: 2.5rem auto;
+    padding: 10rem 1.5rem;
+    margin: 0 auto;
   }
 `
 

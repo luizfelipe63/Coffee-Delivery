@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CheckoutContainer = styled.div`
-  padding: 2.5rem 0;
+  padding: 9rem 0;
 
   h1 {
     font-size: 1.125rem;
@@ -10,7 +10,7 @@ export const CheckoutContainer = styled.div`
   }
 
   @media (max-width: 1120px) {
-    padding: 2rem 1.5rem;
+    padding: 9rem 1.5rem;
   }
 `
 
@@ -66,7 +66,7 @@ export const InfoTotal = styled(InfoItens)`
   }
 `
 export const ButtonCard = styled.button`
-  background: ${(props) => props.theme.color.yellow};
+  background: ${(props) => props.theme.color['card-button']};
   color: ${(props) => props.theme.color.White};
   font-weight: bold;
   font-size: 0.875rem;
@@ -78,6 +78,6 @@ export const ButtonCard = styled.button`
   cursor: pointer;
 
   :hover {
-    background: ${(props) => props.theme.color['yellow-dark']};
+    background: ${(props) => props.theme.color['card-hover']};
   }
 `
