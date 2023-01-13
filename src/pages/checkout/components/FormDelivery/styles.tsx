@@ -91,7 +91,7 @@ export const InputContent = styled.div`
   input {
     padding: 0.75rem;
     font-size: 0.875rem;
-    color: ${(props) => props.theme.color['base-text']};
+    color: ${(props) => props.theme.color.placehoder};
     border: 0;
     background: transparent;
     width: 100%;

@@ -32,6 +32,7 @@ export const defaultTheme = {
     'base-hover': '#D7D5D5',
     'base-button': '#E6E5E5',
     'base-card': '#F3F2F2',
+    placehoder: '#574F4D',
 
     text: '#574F4D',
     'icon-remove': '#8047F8',
@@ -69,6 +70,8 @@ export const darkTheme = {
     'base-text': '#FFF',
     'base-labal': '#EDEDED',
 
+    placehoder: '#fff',
+
     'base-tag': '#291C18',
     'color-tag': '#FFF',
 
@@ -88,7 +91,7 @@ export const darkTheme = {
     text: '#574F4D',
     'icon-remove': '#3B2C22',
 
-    'select-button': '#E6E5E5',
+    'select-button': '#fff',
 
     background: '#3B2C22',
     White: '#FFF',
