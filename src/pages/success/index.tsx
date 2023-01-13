@@ -14,7 +14,7 @@ import {
 import { IconClock } from '../home/components/header/styles'
 import { useContext } from 'react'
 
-import { CoffeContext, OrderInfos } from '../../context/CoffeContext'
+import { CoffeContext } from '../../context/CoffeContext'
 
 export function Success() {
   const { delivery } = useContext(CoffeContext)

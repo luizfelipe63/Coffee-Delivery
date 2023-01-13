@@ -47,8 +47,7 @@ export function Checkout() {
       state: data,
     })
 
-    const addNewDelivery = { ...data }
-    creatNewDeliveryForm(addNewDelivery)
+    creatNewDeliveryForm(data)
   }
 
   const { handleSubmit } = createNewDelivery
