@@ -1,18 +1,20 @@
-import { useContext } from 'react'
+import { ChangeEvent, SelectHTMLAttributes, useContext } from 'react'
 import { CoffeContext, FilterProps } from '../../../../context/CoffeContext'
 import { databutton } from '../../../../mocks/buttonFilter'
 import { FilterContent, OptionsFilter } from './styles'
 
 export function Filter() {
-  const { updateFilter } = useContext(CoffeContext)
+  const { updateFilter, filter } = useContext(CoffeContext)
+
+  const handleChangeFilter = (event: ChangeEvent<HTMLSelectElement>) => {
+    updateFilter(event.target.value as FilterProps)
+  }
+
   return (
-    <FilterContent>
+    <FilterContent value={filter} onChange={handleChangeFilter}>
       {databutton.map((coffes) => {
         return (
-          <OptionsFilter
-            key={coffes.value}
-            onClick={() => updateFilter(coffes.value as FilterProps)}
-          >
+          <OptionsFilter value={coffes.value} key={coffes.value}>
             {coffes.name}
           </OptionsFilter>
         )
