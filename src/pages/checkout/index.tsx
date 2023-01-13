@@ -46,7 +46,9 @@ export function Checkout() {
     navigate('/success', {
       state: data,
     })
-    creatNewDeliveryForm(data)
+
+    const addNewDelivery = { ...data }
+    creatNewDeliveryForm(addNewDelivery)
   }
 
   const { handleSubmit } = createNewDelivery

@@ -35,7 +35,7 @@ export const ButtonContent = styled.div`
   display: flex;
   gap: 0.75rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1120px) {
     display: flex;
     flex-direction: column;
   }
@@ -45,9 +45,6 @@ export const RadioButton = styled.input`
 `
 export const PaymentButton = styled.label`
   position: relative;
-
-  flex: 1;
-
   padding: 1rem;
   border: 0;
   border-radius: 6px;
@@ -57,9 +54,8 @@ export const PaymentButton = styled.label`
   color: ${(props) => props.theme.color.text};
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.75rem;
-
+  cursor: pointer;
   border: 1px solid transparent;
 
   opacity: 0.7;
@@ -67,14 +63,11 @@ export const PaymentButton = styled.label`
   svg {
     color: ${(props) => props.theme.color.purple};
   }
-  /* 
-  :hover {
-    background: ${(props) => props.theme.color['base-hover']};
-  } */
 `
 
 export const AddBorderInput = styled.div`
   position: absolute;
+  left: 0;
   width: 11.16rem;
   height: 100%;
   border-radius: 6px;

@@ -1,5 +1,5 @@
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
-import { FormEvent, useContext, useState } from 'react'
+import { ShoppingCart } from 'phosphor-react'
+import { useContext, useState } from 'react'
 import { CoffeContext } from '../../context/CoffeContext'
 import { CoffeQuantities } from '../CoffeeQuantities'
 import {
