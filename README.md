@@ -2,11 +2,11 @@
 
   <h1 align="center">Luiz Felipe - Coffee Delivery :coffee: </h1>
 
-<div align="center"><img src="./src/assets/ignite-timer.gif"></div>
+<div align="center"><img src="./src/assets/screenchot-coffe.gif"></div>
 
 <br>
 
-> :mag_right: O Coffee Delivery é uma aplicação no qual imita o fluxo da compra de um produto, no qual o usuário pode filtrar por categoria e adicionar a quantidade de café de sua preferência,  
+> :mag_right: O Coffee Delivery é uma aplicação no qual imita o fluxo da compra de um produto, no qual o usuário tem um catálogo de produtos(cafés), onde pode filtrar por categoria e adicionar a quantidade de café de sua preferência e depois preencher o formulário de entrega.
 > <br>
 
 :paperclip: Link da aplicação: https://coffee-delivery-luizfelipe63.vercel.app/
