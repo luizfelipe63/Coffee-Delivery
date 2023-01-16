@@ -6,7 +6,7 @@
 
 <br>
 
-> :mag_right: O Coffee Delivery é uma aplicação no qual imita o fluxo da compra de um produto, no qual o usuário tem um catálogo de produtos(cafés), onde pode filtrar por categoria e adicionar a quantidade de café de sua preferência e depois preencher o formulário de entrega.
+> :mag_right: O Coffee Delivery é uma aplicação que imita o fluxo da compra de um produto, no qual o usuário tem um catálogo de produtos(cafés), onde pode filtrar por categoria e adicionar a quantidade de café de sua preferência e depois preencher o formulário de entrega.
 > <br>
 
 :paperclip: Link da aplicação: https://coffee-delivery-luizfelipe63.vercel.app/
@@ -39,13 +39,13 @@
 <h3>Clonar</h3>
 
 ```bash
-git clone https://github.com/luizfelipe63/Ignite-Timer
+git clone https://github.com/luizfelipe63/Coffe-Delivery
 ```
 
 <h3>Iniciar</h3>
 
 ```bash
-cd Ignite-Timer
+cd Coffe-Delivery
 npm install
 npm run dev
 ```
