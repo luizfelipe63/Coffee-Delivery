@@ -2,7 +2,7 @@
 
   <h1 align="center">Luiz Felipe - Coffee Delivery :coffee: </h1>
 
-<div align="center"><img src="./src/assets/screenchot-coffee.gif"></div>
+<div align="center"><img src="./src/assets/screenchot-coffe.png"></div>
 
 <br>
 
